@@ -1,12 +1,14 @@
-import Main from "@/components/main/Main";
+import Main from "@/app/main/Main";
 import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
+import About from "./about/page";
 
 export default function Home() {
   return (
-    <main>
+    <div className="flex flex-col">
        <Navbar/>
        <Main/>
-    </main>
+       <About/>
+    </div>
   );
 }

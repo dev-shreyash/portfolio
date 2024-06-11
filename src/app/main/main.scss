@@ -1,5 +1,5 @@
 
-.content{
+main{
  font-size: 12rem;
 display: flex;
 justify-content: baseline;
@@ -11,6 +11,8 @@ align-items: center;
 span{
     z-index: 9;
     position: absolute;
+    font-size: 12rem;
+
 }
     img{
         z-index: 2;

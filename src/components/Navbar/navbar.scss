@@ -1,0 +1,22 @@
+@import "../../styles/responsive.scss";
+
+.nav{
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2px;
+    padding: 2vw;
+    text-align: left;
+ 
+button{
+    align-items: flex-start;
+    background-color: #4CAF50;
+    width: 20vw;
+    @include sm{
+        font-size: 1rem;
+        width: 30vw;
+    }
+}
+    
+}

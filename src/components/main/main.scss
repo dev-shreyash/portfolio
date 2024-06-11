@@ -1,0 +1,20 @@
+
+.content{
+ font-size: 12rem;
+display: flex;
+justify-content: baseline;
+flex-direction: column;
+height: 100%;
+padding: 2vw;
+align-items: center;
+
+span{
+    z-index: 9;
+    position: absolute;
+}
+    img{
+        z-index: 2;
+        height: 1500px;
+        width: 1500px;
+    }
+}

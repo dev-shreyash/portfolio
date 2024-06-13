@@ -15,6 +15,16 @@
         gap: 2px;
         padding: 2vw;
         text-align: left;
+
+        .verticalLine {
+            position: absolute;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100vw;
+            background-color: rgb(255, 255, 255);
+            top: 0;
+            opacity: 0; /* Start from the bottom */
+          }
     }
     .right{
         padding: 2vw;

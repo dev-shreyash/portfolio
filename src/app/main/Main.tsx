@@ -88,6 +88,7 @@ const Main = () => {
   );
 };
 
+
 const ScrollButton = () => {
   const handleScroll = () => {
     window.scrollBy({
@@ -95,9 +96,17 @@ const ScrollButton = () => {
       behavior: 'smooth',
     });
   };
+  const fadeIn =useRef<HTMLDivElement>(null)
+
+  useEffect(()=>{
+    gsap.fromTo(fadeIn.current,
+      {opacity:0},
+      {opacity:1, duration:5, delay:4, ease:"power2.out"}
+    )
+  },[])
 
   return (
-    <div className="scrollBtn" onClick={handleScroll}>
+    <div className="scrollBtn" onClick={handleScroll} ref={fadeIn}>
       <img src="/scroll-down-svgrepo-com.svg" alt="Scroll Down" />
     </div>
   );

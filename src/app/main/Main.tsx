@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import './main.scss';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
+import { TsParticles } from '@/components/particles';
 
 const Main = () => {
   const buttonsRef = useRef<HTMLDivElement>(null);
@@ -65,6 +66,7 @@ const Main = () => {
 
   return (
     <main className="bg-black-100 text-white w-screen h-screen flex flex-col items-center justify-center">
+             
       <div className="name">
         <span className="dev-shreyash">dev-Shreyash</span>
       </div>

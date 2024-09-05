@@ -1,36 +1,55 @@
-.about{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: #000000;
-    width: 100%;
-    margin: auto;
-    
-    
-    .content-1{
-        background-color: #ffffff !important;
-        margin: 6vw;
-        padding: 4rem;
-        border-radius: 5rem;
+.about {
+    .intro-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #fff;
+  
+      .typing-text {
+        display: inline-block;
+        border-right: 2px solid #fff;
+        white-space: nowrap;
+        overflow: hidden;
+      }
     }
-    .content-2{
-        background-color: #ffffff !important;
-        margin: 6vw;
-        padding: 4rem;
-        border-radius: 5rem;
-
-        ul{
-            
-
-            li{
-                display: flex;
-                list-style: none;
-                svg{
-                    padding: .5rem;
-                }
-            }
+  
+    .skills-section {
+      padding: 2rem;
+      background: #222;
+      color: #fff;
+  
+      h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+  
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+  
+        li {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
         }
+      }
     }
-}
+  
+    .text-lg {
+      font-size: 1.125rem;
+    }
+  
+    .text-5xl {
+      font-size: 3rem;
+    }
+  
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+  }
+  

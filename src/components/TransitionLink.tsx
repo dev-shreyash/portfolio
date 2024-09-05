@@ -18,7 +18,7 @@ export default function TransitionLink({
 
   return (
     <button
-      className="border-[1px] border-black p-4 rounded-full hover:bg-black hover:text-neutral-100 cursor-pointer"
+      // className="border-[1px] border-black p-4 rounded-full hover:bg-black hover:text-neutral-100 cursor-pointer"
       onClick={handleClick}
     >
       {label}

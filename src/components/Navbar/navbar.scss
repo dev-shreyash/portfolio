@@ -32,17 +32,17 @@
         // -o-border-radius: 20%;
 
         button{
-           // border: 1px solid rgb(6, 6, 6);
+            //border: 1px solid rgb(6, 6, 6);
             background-color: #ffffff;
             color: rgb(0, 0, 0);
             font-size: small;
-         //   border-radius: 30%;
-            padding: .5rem;
+            border-radius: 65px;
+            padding: 10px 20px;
+            border: 2px solid #ffffff  ;
             font-weight: 800;
-            -webkit-border-radius: 30%;
-            -moz-border-radius: 30%;
-            -ms-border-radius: 30%;
-            -o-border-radius: 30%;
+            transition: all 300ms linear;
+            filter:drop-shadow(0 0 10px rgb(39, 39, 39)) ;
+            -webkit-filter:drop-shadow(0 0 10px rgb(39, 39, 39)) ;
 }
 }
 
@@ -73,7 +73,6 @@
         border: none;
         text-align: left;
         align-items: flex-start;
-        //  width: 20vw;
         color: rgba(255, 255, 255, 0.521);
 
         @include sm {
@@ -90,6 +89,8 @@
             color: white;
             transition: all 300ms linear;
             letter-spacing: 1.2px;
+            filter:drop-shadow(0 0 10px rgb(255, 255, 255)) ;
+            -webkit-filter:drop-shadow(0 0 10px rgb(255, 255, 255)) ;
         }
     }
 

@@ -35,6 +35,7 @@ import {
 import { DiJava } from "react-icons/di";
 import "./about.scss";
 import { FaAnchor } from "react-icons/fa6";
+import { Yellowtail } from "next/font/google";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,10 +50,11 @@ const About = () => {
     <div className="about">
       <div className="left">
         <div className="avatar">
-          <img src="/spiderman-7810368_1920.png" alt="" />
+          <img src="/spiderman-7810368_1920.png" alt="avatar" />
         </div>
         <div className="details">
-          <span>Shreyash Bhosale</span>
+          <div className="main-details">
+          <span className="dev-shreyash">Shreyash Bhosale</span>
           <div className="profession">
             <span>Full Stack Developer</span>
           </div>
@@ -64,11 +66,14 @@ const About = () => {
               bhosaleshreyash2@gmail.com
             </a>
           </div>
+          </div>
+        
           <hr />
           <div className="bio">
             <h2>Bio</h2>
             <p>I am Shreyash Bhosale. I am a full stack developer.</p>
           </div>
+          <hr />
           <div className="achievements">
             <h2>Achievements</h2>
             <p>No Achievements yet.</p>
@@ -95,19 +100,34 @@ const About = () => {
         <div className="main-headings">
           <div className="boxes">
             <div className="project-made">
-              <FaLightbulb/>
+              <div className="icon">
+              <FaLightbulb  />
+              </div>
+              <div className="content">
               <h2>Projects Made</h2>
               <span>10</span>
+              </div>
             </div>
+            {/* write for experience and streak here */}
+            
+
             <div className="experience">
+              <div className="icon">
               <FaAnchor/>
+              </div>
+              <div className="content">
               <h2>Experience</h2>
               <span>less than 1 year</span>
+              </div>
             </div>
             <div className="streak">
+              <div className="icon">
               <FaFire/>
+              </div>
+              <div className="content">
               <h2>Streak</h2>
               <span>10 Days 🔥</span>
+              </div>
             </div>
           </div>
         </div>

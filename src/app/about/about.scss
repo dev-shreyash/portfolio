@@ -1,55 +1,135 @@
 .about {
-    .intro-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      background: #111;
-      color: #fff;
-  
-      .typing-text {
-        display: inline-block;
-        border-right: 2px solid #fff;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-    }
-  
-    .skills-section {
-      padding: 2rem;
-      background: #222;
-      color: #fff;
-  
-      h2 {
-        text-align: center;
-        margin-bottom: 1rem;
-      }
-  
-      ul {
+   display: flex;
+   width: 100%;
+   justify-content: space-around;
+   background-color: #4f4f4f35;
+   //make background image blur
+   backdrop-filter: blur(20px);
+   padding: 30px;
+   .left{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       width: 30%;
+       .avatar{
+           img{
+            border-radius: 50%;
+             overflow: hidden;
+               width: 150px;
+               height: 150px;
+               border-radius: 50%;
+           }
+           
+       }
+       .details{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+        flex-direction: column;
+        gap: 30px;
+        h2{
+          font-size: 40px;
+        }
+        .dev-shreyash{
+            color: #fff;
+            font-size: 50px;
+            margin-top: 10px;
+        }
+       }
+   }
+   .right{
+    width: 50%;
+    border: 1px solid #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 20px;
   
-        li {
+    p{
+        color: #fff;
+        font-size: 20px;
+    }
+    .main-headings{
+      .boxes{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        //add project-made style to nth childrens of boxes
+       
+        .project-made{
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          justify-content: center;
+          gap: 10px;
+          font-size: 20px;
+          border: 1px solid #535353;
+          padding: 20px;
+          border-radius: 10px;
+          color: #fff;
+          background-color: #12121273;
+          .icon{
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #03b26c;
+          }
+          h2{
+            color: #e0e0e0d1;
+          }
+          span{
+            color: #fff;
+            font-size: 20px;
+          }
+        }
+        .experience{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          font-size: 20px;
+          border: 1px solid #535353;
+          padding: 20px;
+          border-radius: 10px;
+          color: #fff;
+          background-color: #12121273;
+          .icon{
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #03b26c;
+          }
+          h2{
+            color: #e0e0e0d1;
+          }
+          span{
+            color: #fff;
+            font-size: 20px;
+          }
+        }
+        .streak{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          font-size: 20px;
+          border: 1px solid #535353;
+          padding: 20px;
+          border-radius: 10px;
+          color: #fff;
+          background-color: #12121273;
+          .icon{
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #03b26c;
+          }
+          h2{
+            color: #e0e0e0d1;
+          }
+          span{
+            color: #fff;
+            font-size: 20px;
+          }
         }
       }
-    }
-  
-    .text-lg {
-      font-size: 1.125rem;
-    }
-  
-    .text-5xl {
-      font-size: 3rem;
-    }
-  
-    .text-3xl {
-      font-size: 1.875rem;
-    }
+        }
+   }
   }
   

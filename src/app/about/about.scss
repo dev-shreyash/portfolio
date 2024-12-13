@@ -1,17 +1,26 @@
 .about {
    display: flex;
-   width: 100%;
-   justify-content: space-around;
-   background-color: #4f4f4f35;
+   width: 90%;
+   justify-content: space-between;
+  // background-color: #00000000;
    //make background image blur
-   backdrop-filter: blur(20px);
-   padding: 30px;
+   //backdrop-filter: blur(20px);
+   padding: 50px;
+   font-size: larger;
+   margin: auto;
+   border-radius: 30px;
    .left{
+
+    img{
+      width: 150px;
+      height: 150px;
+      
+    }
        display: flex;
-       flex-direction: column;
-       align-items: center;
+       //flex-direction: column;
+      // align-items: center;
        justify-content: center;
-       width: 30%;
+       width: 45%;
        .avatar{
            img{
             border-radius: 50%;
@@ -29,25 +38,41 @@
         h2{
           font-size: 40px;
         }
-        .dev-shreyash{
-            color: #fff;
+        .dev-shreyash2{
+            color: #000000;
             font-size: 50px;
             margin-top: 10px;
+            margin-left: -10px;
+        }
+
+        .socials{
+          display: flex;
+          flex-direction: column;
+
+          .links{
+            gap: 10px;
+            display: flex;
+            font-size: 40px;
+          }
         }
        }
    }
+
    .right{
-    width: 50%;
-    border: 1px solid #fff;
-    padding: 30px;
+    width: 45%;
+    //border: 1px solid #fff;
+    //padding: 30px;
     display: flex;
     flex-direction: column;
     gap: 30px;
     border-radius: 20px;
-  
+    background-color: #ffffff00;
     p{
-        color: #fff;
+        color: #121212;
         font-size: 20px;
+    }
+    h1{
+      font-size: 50px;
     }
     .main-headings{
       .boxes{
@@ -131,5 +156,8 @@
       }
         }
    }
+ 
   }
-  
+  .about:hover .zig-zag-line {
+    --a: 180deg; /* New angle when hovered */
+  }

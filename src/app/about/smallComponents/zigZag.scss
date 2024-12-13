@@ -1,21 +1,37 @@
 .zig-zag-line {
-    --a: 130deg; /* Default angle */
-    --s: 100px;  /* Size of the zig-zag */
-    --b: 15px;   /* Thickness */
+  z-index: 2;
+  --a: 130deg; /* Default angle */
+  --s: 100px;  /* Size of the zig-zag */
+  --b: 15px;   /* Thickness */
   
-    background: #ffffff;
-    width: calc(var(--b) + var(--s) / (2 * tan(var(--a) / 2)));
-    min-height: 250px;
-    box-shadow: inset 0 0 0 var(--b) #ffffff;
-    
-    --_g: 100% var(--s) repeat-y conic-gradient(
-      from calc(90deg - var(--a) / 2) at left,
-      #0000,
-      #000 1deg calc(var(--a) - 1deg),
-      #0000 var(--a)
-    );
-    
-    mask: var(--b) 50% / var(--_g) exclude, 0 50% / var(--_g);
-    -webkit-mask: var(--b) 50% / var(--_g) exclude, 0 50% / var(--_g);
+  background: #ffffff;
+  width: calc(var(--b) + var(--s) / (2 * tan(var(--a) / 2)));
+  min-height: 250px;
+  box-shadow: inset 0 0 0 var(--b) #ffffff;
+  
+  --_g: 100% var(--s) repeat-y conic-gradient(
+    from calc(90deg - var(--a) / 2) at left,
+    #0000,
+    #000 1deg calc(var(--a) - 1deg),
+    #0000 var(--a)
+  );
+  
+  mask: var(--b) 50% / var(--_g) exclude, 0 50% / var(--_g);
+  -webkit-mask: var(--b) 50% / var(--_g) exclude, 0 50% / var(--_g);
+  
+  /* Start as invisible */
+  opacity: 0;
+  
+  /* Animate opacity from 0 to 1 after 1 second */
+  animation: appear 1s ease-out 1s forwards;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes appear {
+  0% {
+    opacity: 0;
   }
-  
+  100% {
+    opacity: 1;
+  }
+}

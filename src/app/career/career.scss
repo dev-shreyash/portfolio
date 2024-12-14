@@ -1,0 +1,59 @@
+.career{
+    padding-top: 50px;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    // background-color: #00000000;
+    //make background image blur
+    //backdrop-filter: blur(20px);
+    padding: 50px;
+    font-size: larger;
+   margin: auto;
+    border-radius: 30px;
+    .left{
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        //justify-content: center;
+        width: 45%;
+        gap: 30px;
+
+        .exp-l{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+        }
+
+        h1{
+            b{
+                font-size: 50px;
+            }
+            
+        }
+    }
+    .right{
+        width: 45%;
+        //border: 1px solid #fff;
+        //padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        border-radius: 20px;
+        //background-color: #ffffff00;
+
+        .proj-l{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        h1{
+            b{
+                font-size: 40px;
+            }
+        }
+    }
+}

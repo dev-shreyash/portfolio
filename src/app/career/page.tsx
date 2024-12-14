@@ -18,7 +18,7 @@ export default function Career() {
     <div className="exp-l">
       <div className="exp-1">
       <h3><strong>Freelance Web Developer</strong></h3>
-  <p><em>Self-Employed | Jan 2020 – Present</em></p>
+  <p><em>Self-Employed | Jan 2022 – 2023</em></p>
   <ul>
     <li>Developed and deployed responsive web applications using React, Next.js, and Tailwind CSS.</li>
     <li>Created custom APIs and backend services using Node.js and MongoDB.</li>
@@ -31,7 +31,7 @@ export default function Career() {
       <div className="exp-2">
       
   <h3><strong>Frontend Developer Intern</strong></h3>
-  <p><em>ABC Tech Solutions | June 2022 – August 2022</em></p>
+  <p><em>Synexoo Tech | May 2024 – july 2024</em></p>
   <ul>
     <li>Developed responsive web interfaces using HTML, CSS, and JavaScript, improving website load times by 15%.</li>
     <li>Implemented React components for dynamic UI features, enhancing user interactivity.</li>
@@ -69,6 +69,8 @@ export default function Career() {
     <li>Built with Next.js and TypeScript for scalability and performance.</li>
   </ul>
 </div>
+<hr />
+<p>scroll to see more...</p>
 
         </div>
       </div>

@@ -81,6 +81,7 @@ const Main = () => {
           <a href=""><img src="/icons8-twitterx.svg" alt="Twitter" /></a>
         </div>
         <div className="buttons" ref={buttonsRef}>
+          {/* <a href="https://drive.google.com/uc?export=download&id=1tJkg9ehtCODKzYJNmL4FAXn18rQQafSQ"></a> */}
           <button className="resume">Resume <img src="/download-svgrepo-com.svg" alt="Download" /></button>
           <button className="contact">Contact</button>
         </div>

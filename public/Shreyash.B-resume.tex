@@ -1,0 +1,345 @@
+\documentclass[letterpaper,10.5pt]{article}
+\documentclass{article}
+\usepackage{fontawesome5}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{graphicx}  
+\usepackage{hyperref}
+
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-3pt}\raggedright\large\uppercase
+}{}{0em}{}[\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+  {#1 \vspace{-2pt}}
+    {\vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      {#3} & {#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingb}[6]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+             \vspace{-3pt}
+      {#5} & { #6} \\
+   {\scriptsize(#3)} & \textit{\scriptsize #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingProject}[5]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+   \href{#4}{\textbf{#1}} \small{{ $|$ #3}} { $|$ \textbf{#2}} & \href{#4}{\faIcon{link}} {\href{#5}{ \faIcon{code}} } \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubheadingExp}[3]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+   \textbf{#1}  $|$ #2 & #3 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+%\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{document}
+
+
+
+\begin{center}
+    {\Huge \scshape Shreyash Bhosale} \\ \vspace{1pt}
+    Thane, maharashtra 400612 \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ 7039201586 ~ \href{mailto:x@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{bhosaleshreyash2@gmail.com}} ~ 
+    \href{https://linkedin.com/in//}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/bhosaleshreyash2/}}  ~
+    \href{https://github.com/}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/dev-shreyash}}
+    \vspace{-8pt}
+\end{center}
+
+%--------about section-----------------%
+% \section{About Me}
+%     \resumeSubHeadingListStart
+
+%     \resumeSubItem{Aspiring Full Stack Web Developer}{Focused on React and Node.js. Skilled in building web applications with attention to design and user experience. Strong problem-solving abilities and a passion for learning the latest technologies in web development.}
+    
+%     \resumeSubHeadingListEnd
+
+  
+%--------PROGRAMMING SKILLS------------
+\section{Technical Skills}
+    \resumeSubHeadingListStart
+
+    \resumeSubItem{Programming Languages}{JavaScript/TypeScript, Python, Java, C}
+    \resumeSubItem{Front-End Skills}{HTML/CSS, Sass, React.js, JavaScript, GSAP, Tailwind CSS, Shadcn UI, Next.js}
+    \resumeSubItem{Back-End Skills}{JavaScript, TypeScript, Node.js, Express.js, MongoDB, Mongoose, Prisma, MySQL, SQLite, Docker}
+    \resumeSubItem{Version Control Tools}{Git, GitHub}
+    \resumeSubItem{Languages}{Fluent in English, Conversational Proficiency in Hindi and Marathi}
+    \resumeSubItem{Art Technology}{Adobe Photoshop, Adobe Premiere Pro, Illustrator, Figma}
+    \resumeSubItem{Interests}{Research and Analysis, Design, Web Development}
+    
+    \resumeSubHeadingListEnd
+
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+\resumeSubHeadingListStart
+    \resumeSubheadingExp
+       {Full-stack Web Developer Intern}{Synexoo}{May 2024 - July 2024}
+    \resumeItemListStart
+         \resumeItemWithoutTitle
+          {Developed and maintained web applications using technologies such as React, Node.js, and MongoDB.}
+         \resumeItemWithoutTitle
+          {Implemented responsive and user-friendly UI/UX designs to enhance the user experience.}
+         \resumeItemWithoutTitle
+          {Collaborated with team members to troubleshoot and resolve technical issues.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+     \resumeSubheadingProject
+    {Real Estate Platform (MERN Stack Application)}{}{{NodeJS, ExpressJS, ReactJS} }
+{https://real-estate-react-app-shreyash.netlify.app/}{https://github.com/dev-shreyash/real-estate-react-app}
+    \resumeItemListStart
+          \resumeItemWithoutTitle
+{Developed Full-Stack Application: Created a \textbf{MERN} stack web app enabling user profile management, property listings, and advanced search features. }
+\resumeItemWithoutTitle{
+Integrated Real-Time Chat: Implemented real-time messaging using Prisma and \textbf{Socket.io}, enhancing user interaction between buyers and sellers.  
+}
+\resumeItemWithoutTitle{
+Enhanced User Experience: Utilized \textbf{React}, \textbf{React Router DOM}, and \textbf{Sass} to build a responsive and intuitive user interface. 
+}
+
+ 
+      \resumeItemListEnd
+ 
+            \resumeSubheadingProject
+    {FYH - Fund raising platform}{}{{Next.js, Tailwind, ReactJS, MongoDB} }
+{https://nextjs-fund-app.vercel.app}{https://github.com/dev-shreyash/nextjs-ai-app}
+    \resumeItemListStart
+\resumeItemWithoutTitle{
+Effortless Fundraising: Integrated with \textbf{Razorpay} for seamless, secure, and hassle-free online donations, ensuring a smooth experience for both donors and recipients.
+}
+\resumeItemWithoutTitle{
+Intuitive Dashboard: Manage funds effortlessly with a sleek UI built on \textbf{Next.js} and \textbf{Tailwind CSS}, featuring detailed analytics and easy withdrawal options.
+}
+\resumeItemWithoutTitle{
+Easy Sharing: Unique profile links allow anyone to visit and donate directly without logging in, making the donation process quick and convenient.
+}
+
+ %           \resumeItemWithoutTitle
+     %       {Produced Admin Control Panel performing \textbf{CRUD} operations with 9+ features like adding and deleting products.}
+   %     \resumeItemWithoutTitle
+    %      {Implemented the backend in \textbf{NodeJS} and \textbf{Express} with \textbf{MongoDB} using mongoose to manage the database.}
+      \resumeItemListEnd
+ \resumeSubheadingProject
+    {Video Streaming application API}{}{{Node.js, Express.js, Database} }
+{}{https://github.com/dev-shreyash/Backend-project}
+
+    \resumeItemListStart
+          \resumeItemWithoutTitle
+{Solid Backend Foundation: Built on \textbf{Node.js} and \textbf{Express}, this project offers essential features like user authentication, MongoDB integration, and error handling, providing a sturdy foundation for a videostreaming application. .}
+\resumeItemWithoutTitle{
+ Secure Authentication & File Handling: Implemented secure user authentication and file upload 
+ functionalities using \textbf{JWT} tokens, \textbf{Multer}, and \textbf{Cloudinary}, ensuring data integrity user privacy
+}
+      \resumeItemListEnd
+       
+            \resumeSubheadingProject
+    {UI Based project}{UI/UX}{{ReactJS, HTML/CSS, JS} }
+{}{https://github.com/dev-shreyash/}
+    \resumeItemListStart
+         \resumeItemWithoutTitle{
+Cinematic Explorer (\textbf{React}): Designed an immersive movie platform with React, enabling seamless movie browsing and personalized watchlist management.
+}
+\resumeItemWithoutTitle{
+Branding Landing Page: Developed a captivating brand landing page with streamlined lead capture functionality for enhanced engagement.
+}
+\resumeItemWithoutTitle{
+Taskmaster Web App: Engineered a polished task management solution with an intuitive interface for efficient task organization and productivity enhancement.
+}
+
+      \resumeItemListEnd 
+      \resumeSubHeadingListEnd
+%----------certificates--------%
+
+\section{Certifications}
+\begin{itemize}
+    \item Advanced JavaScript by Scaler: \href{https://moonshot.scaler.com/s/sl/-W3wuB-tS1}{Source} \faChainBroken
+    \item Mastering Node.js: \href{https://moonshot.scaler.com/s/sl/VOGo79MMUV}{Source} \faChainBroken
+\end{itemize}
+
+
+ %-----------EDUCATION-----------
+
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {Mumbai University}{Aug 2022 -- present}
+      {Bachelor of Science in Computer Science}{Mumbai, Maharashtra}
+      \resumeItemListStart
+        \resumeItem{Current SGPI}{8.90+}
+      \resumeItemListEnd
+    % \resumeSubheading
+    %   {KV Pendharkar College}{2019 -- 2021}
+    %   {HSC -- Stream Science}{Dombivli, Maharashtra}
+\resumeSubHeadingListEnd
+
+% \section{Open Source Contributions}
+%   \resumeSubHeadingListStart
+%  \resumeSubheadingProject
+%     {Dynamic Instructions Calculation}{Open Source}{{REST API, Tool, Python, Bash, Flask} }
+% {https://instructions.pythonanywhere.com/}{https://github.com/AyushR1/Dynamic-Instructions-Calculation}
+%     \resumeItemListStart
+%              \resumeItemWithoutTitle
+%           {Devised a \textbf{GDB}-based bash and python \textbf{script} to get instruction analysis for a given program with 100\% precision.}
+%           \resumeItemWithoutTitle
+%           {Implemented \href{https://github.com/AyushR1/Dynamic-Instructions-Calculation/blob/main/docs/api.md}{\textbf{\textbf{REST API}}}
+%           service with the \textbf{script} on the \textbf{server} to find instructions analysis of the first 10000 instructions.}
+%           % \resumeItemWithoutTitle
+%           % {Developed a tool \& web app to find instructions analysis of program with 100\% precision.}
+ 
+%     %               \resumeItemWithoutTitle
+%      %    {Implemented this tool as a web app utilising \textbf{Flask} in the backend and frontend visualised in HTML, CSS, and Javascript.}
+%         %                 \resumeItemWithoutTitle
+%         % {Illustrated current status from server-side backend to client-side using \textbf{Socket.IO}.}
+%       \resumeItemListEnd
+%        \resumeSubheadingProject
+%     {AR\_Beast Kernel}{Open Source}{{Linux Kernel, Android, App, C}}
+% {https://arbeast.github.io/}{https://github.com/AyushR1?tab=repositories\&q=kernel\&type=\&language=\&sort=stargazers}
+%     \resumeItemListStart
+%        \resumeItemWithoutTitle
+%           {Built Custom Linux Kernel for 4 Android Devices, which helped \href{https://forum.xda-developers.com/t/discontinued-ar_beast-kernel-r6-3-18-101-mar-23-2018-dragontc.3735016/}{{\textbf{9000}}+ users \faIcon{external-link-alt}} to get an optimized device experience.}  
+%           \resumeItemWithoutTitle
+%           {Coded device-specific     \href{https://github.com/AyushR1/AR_Beast-Tomato/blob/tomato/drivers/thermal/arb/msm_thermal.c}{{Thermal control driver \faIcon[regular]{file-code}}} \& \href{https://github.com/AyushR1/AR_Beast-Zuk_Z2/commit/a982ac0e1ddad1d1338cbd6b0a955c583a93072d}{{Current Control driver \faIcon[regular]{file-code}}} in C, which reduced heating, increased performance by \textbf{10}\% and improved charging time by \textbf{30} min.}
+%                             \resumeItemWithoutTitle
+%           {Overhauled \href{https://github.com/AyushR1/KernelAdiutor-Mod}{{Android A}pp \faIcon{code}} to easily configure over 50 features offered by the kernel, reaching over \href{ https://androidfilehost.com/?w=profile&uid=673368273298917501}{{\textbf{30}},{\textbf{000} downloads \faIcon{external-link-alt}.}}}
+%       \resumeItemListEnd
+%            \resumeItemWithoutTitle
+%            {\textbf{Collaborated in 10+ Open Source Projects }on Software Development, Scripting, Android, and Linux Kernels and participated in 3+ open source programs.}
+% \resumeSubHeadingListEnd
+
+
+
+% %-----------PORS-----------------
+% \section{Positions of Responsibility}
+
+%   \resumeSubHeadingListStart
+  
+%   \resumeSubheadingExp
+%   {KODE Club}{Science \& Technical Council}{}
+%         \resumeItemListStart
+%           \resumeItemWithoutTitle     
+%                  {\href{https://photos.app.goo.gl/C3RExPgdJpwppjnm9}{Lectured on \textbf{Open Source Development, Git,} and \textbf{GitHub} \faIcon{external-link-alt}} and tutored \href{ https://github.com/AyushR1/Git-GitHub-Workshop/}{{workshops for over 100 attendees} \faIcon[regular]{file-code}}.}     
+%      \resumeItemListEnd
+       
+%   \resumeSubheadingExp
+%   {Technical Head}{ACM - SC}{}
+%        \resumeItemListStart
+%         \resumeItemWithoutTitle
+%           {Automated bulk emailing using \href{https://github.com/AyushR1/Bulk-Certificate-Maker/}{scripts \faIcon{external-link-alt}} and designed the official \href{https://rgipt.acm.org/} {website \faIcon{external-link-alt}, leading to \textbf{99\%+} time savings.}}
+
+%      \resumeItemWithoutTitle
+%       {Composed \textbf{Competitive Programming} questions for \href{https://www.codechef.com/ODE2021/}{{Codin}g Contests \faIcon{external-link-alt}} contests and mentored over 50 students.}
+%       \resumeItemListEnd
+%     %  \resumeSubheadingPro
+%     % { \href{https://www.rgipt.ac.in/en/page/home-cse}{{\textbf{Training and Placement Coordinator}}} $|$ \emph{Dept. of CSE, RGIPT} }{}
+   
+% \resumeSubHeadingListEnd
+
+
+
+%-----------Awards-----------------
+% \section{Achievements}
+% \resumeItemListStart
+% \resumeItemWithoutTitle
+% {Solved \href{https://github.com/AyushR1/DSA-QA/}{250+  Data Structures and Algorithmic {Problems} \faIcon{external-link-alt}}  on 
+% \href{https://leetcode.com/AyushR1/}{LeetCode}, 
+% \href{https://auth.geeksforgeeks.org/user/ayushr1_gfg}{{GeeksforGeeks}}, Codeforces.
+% \hfill
+% \href{https://www.linkedin.com/in/ayushr1}{\includegraphics[height=10pt,width=10pt]{leetcode.png}}  
+% \href{https://auth.geeksforgeeks.org/user/ayushr1_gfg}{\faIcon{poll}}}
+% \resumeItemWithoutTitle
+% {Placed in the top 23 out of over 5,000 participants in the HackNITRR (NIT Rourkela) hackathon for the project, Sampark. 
+% \hfill
+% \href{https://devfolio.co/projects/sampark-8705}{\faIcon{certificate}}}
+% \resumeItemWithoutTitle
+% {Regionalist in the 2020-21 \href{https://drive.google.com/file/d/166f0APz01XpxkFRC2Jj-MZfdezvqN_cL/view?usp=sharing}{ICPC Asia Amritapuri Doublesite} \& \href{https://drive.google.com/file/d/12iHnk-QTFNEFMlT0RtzUQPJx-VE-aazo/view?usp=sharing}{{ICPC Asia Gwalior-Pune}} Programming Contest.\href{https://drive.google.com/drive/folders/1hOZy-qfPRcbJtT9_0KVmIQzabxIpurpy?usp=sharing}{\hfill\faIcon{certificate}}}
+% \resumeItemWithoutTitle
+% {Qualified for the 2021 \href{https://drive.google.com/file/d/1dZ_wFBDmbI-wAKbAvBAo_n1-ssqiqFjs/view?usp=sharing}{{Goo}gle CodeJam} Coding Competition, scoring 59 points.\href{https://drive.google.com/file/d/1dZ_wFBDmbI-wAKbAvBAo_n1-ssqiqFjs/view?usp=sharing}{\hfill \faIcon{certificate}}}
+% \resumeItemWithoutTitle
+% {Awarded \href{https://drive.google.com/file/d/15pTlVu3U5WDSyJxvZSGFACwZ2aaa9Cs1/view?usp=share_link}{Merit-Cum-Means Scholarship } for the \textbf{Top 10\%*} students in the CSE batch.\href{https://drive.google.com/file/d/15pTlVu3U5WDSyJxvZSGFACwZ2aaa9Cs1/view?usp=share_link}{\hfill\faIcon{certificate}}}
+% \resumeItemWithoutTitle
+% {Achieved a top 1.84\% rank in the IIT-JEE Advanced 2020 exam.\href{https://drive.google.com/file/d/15pTlVu3U5WDSyJxvZSGFACwZ2aaa9Cs1/view?usp=share_link}{\hfill\faIcon{certificate}}}
+% % \resumeItemWithoutTitle
+% % {Achieved \textbf{{International Rank 15}} \& Zonal Rank 1 in the  International English Olympiad 2017.}
+% \resumeItemListEnd
+
+%-------------------------------------------
+\end{document}

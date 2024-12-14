@@ -1,0 +1,64 @@
+.project{
+
+    padding-top: 50px;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+   
+    padding: 50px;
+    font-size: larger;
+   margin: auto;
+    border-radius: 30px;
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        //justify-content: center;
+        width: 45%;
+        gap: 30px;
+        h1{
+            b{
+                font-size: 50px;
+            }
+        }
+
+        img{
+            width: 150px;
+            height: 150px;
+            filter: grayscale(100%);
+            svg {
+                filter: grayscale(100%);
+              }
+              
+        }
+
+        .project-l{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            font-family: "Playwrite US Modern Guides", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        //justify-content: center;
+        width: 45%;
+        gap: 30px;
+
+        .project-l2{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            font-family: "Playwrite US Modern Guides", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+    }
+}

@@ -8,54 +8,74 @@ export default function Contact() {
   const isContactPage = pathname.includes('/contact');
 
   return (
-    <main className="bg-neutral-100 w-[90%] opacity-98 text-black mx-auto h-screen flex flex-col items-center justify-center gap-[50px]" >
-  
+    <main className="bg-neutral-100 w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px]">
+    
+
+      {/* Connect with Me Section */}
+      <section className="connect-with-me">
+        <h3>Connect with Me</h3>
+        <p>
+          Lets stay connected! Follow me on my social media profiles and feel free to send me a message.
+        </p>
+      </section>
       <section className="contact-form">
-        <img src="contact-animated.svg" alt="" />
-       
-      <div>
-        <h2>Contact Us</h2>
-        <form>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name*"
-            onFocus={(e) => (e.target.placeholder = "")}
-            onBlur={(e) => (e.target.placeholder = "Name*")}
-            maxLength={50}
-            tabIndex={1}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="E-mail*"
-            onFocus={(e) => (e.target.placeholder = "")}
-            onBlur={(e) => (e.target.placeholder = "E-mail*")}
-            maxLength={50}
-            tabIndex={2}
-            required
-          />
-          <select name="subject" id="subject" tabIndex={3} required>
-            <option value="" selected>
-              Projects
-            </option>
-            <option value="">Feedback</option>
-            <option value="">Say hi</option>
-          </select>
-          <textarea
-            name="message"
-            placeholder="Message*"
-            onFocus={(e) => (e.target.placeholder = "")}
-            onBlur={(e) => (e.target.placeholder = "Message*")}
-            maxLength={1560}
-            tabIndex={4}
-            required
-          ></textarea>
-          <input type="submit" value="Send" tabIndex={5} />
-        </form>
-      </div>
-    </section>
+        
+        <img src="contact-animated.svg" alt="Contact Animation" />
+        
+        <div>
+          
+          <h2>Contact Me</h2>
+          <form>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name*"
+              onFocus={(e) => (e.target.placeholder = "")}
+              onBlur={(e) => (e.target.placeholder = "Name*")}
+              maxLength={50}
+              tabIndex={1}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail*"
+              onFocus={(e) => (e.target.placeholder = "")}
+              onBlur={(e) => (e.target.placeholder = "E-mail*")}
+              maxLength={50}
+              tabIndex={2}
+              required
+            />
+            <select name="subject" id="subject" tabIndex={3} required>
+              <option value="" selected>
+                Projects
+              </option>
+              <option value="">Feedback</option>
+              <option value="">Say hi</option>
+            </select>
+            <textarea
+              name="message"
+              placeholder="Message*"
+              onFocus={(e) => (e.target.placeholder = "")}
+              onBlur={(e) => (e.target.placeholder = "Message*")}
+              maxLength={1560}
+              tabIndex={4}
+              required
+            ></textarea>
+            <input type="submit" value="Send" tabIndex={5} />
+          </form>
+        </div>
+      </section>
+
+      {/* Thank You Section */}
+    
+
+      {/* Footer */}
+      <footer>
+        <p>Website Created by Shreyash Bhosale, 2024</p>
+      </footer>
+
+      {/* Conditional Transition Link */}
       {isContactPage && <TransitionLink href="/" label="Home ->" />}
     </main>
   );

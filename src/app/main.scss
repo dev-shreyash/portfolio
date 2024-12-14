@@ -1,0 +1,54 @@
+body, html {
+    overscroll-behavior: none;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .swipe-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 1s ease-in-out;
+  }
+  
+  .panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ccc; /* Default background */
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s, transform 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+  
+  .panel.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .panel-1 {
+    background-color: #ff5733;
+  }
+  
+  .panel-2 {
+    background-color: #800080;
+  }
+  
+  .panel-3 {
+    background-color: #3498db;
+  }
+  
+  .panel-4 {
+    background-color: #2ecc71;
+  }
+  

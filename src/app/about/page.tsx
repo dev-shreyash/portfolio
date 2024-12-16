@@ -84,18 +84,158 @@ const About = () => {
     });
   }, []);
   
+  useEffect(() => {
+    // Lenis smooth scrolling setup
+    const lenis = new Lenis({
+      lerp: 0.1, // Adjust the smoothness of scrolling
+      smoothWheel: true, // Make wheel scroll smooth
+    });
+
+    // Smooth scrolling animation loop
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Split and animate text on scroll
+    const splitTypes = document.querySelectorAll(".reveal-type-small");
+
+    splitTypes.forEach((char: any) => {
+      const bg = char.dataset.bgColor;
+      const fg = char.dataset.fgColor;
+
+      // Check if the element is found
+      if (!char) {
+        console.warn('Element not found');
+        return;
+      }
+
+      // Split the text into individual words
+      const text = new SplitText(char, { types: "words", wordClass: "split-word" });
+
+      // Check if SplitText split the words
+      console.log(text.words); // Log words for debugging
+
+      // Animate each word
+      gsap.fromTo(
+        text.words,
+        {
+          color: bg, // Start color
+          opacity: 0, // Ensure opacity starts at 0
+        },
+        {
+          color: fg, // End color
+          opacity: 1, // Fade in the words
+          duration: .1, // Duration of the animation
+          stagger: 0.2, // Stagger the animation between words
+          scrollTrigger: {
+            trigger: char,
+            start: "top 97%",
+            end: "top 80%",
+            scrub: true,
+            markers: true, // Optional: Set to true to view scroll markers for debugging
+            toggleActions: "play play reverse reverse", // Control animation playback actions
+          },
+        }
+      );
+    });
+  }, []);
+  
+  useEffect(() => {
+    // Lenis smooth scrolling setup
+    const lenis = new Lenis({
+      lerp: 0.1, // Adjust the smoothness of scrolling
+      smoothWheel: true, // Make wheel scroll smooth
+    });
+
+    // Smooth scrolling animation loop
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Split and animate text on scroll
+    const splitTypes = document.querySelectorAll(".reveal-type-mid");
+
+    splitTypes.forEach((char: any) => {
+      const bg = char.dataset.bgColor;
+      const fg = char.dataset.fgColor;
+
+      // Check if the element is found
+      if (!char) {
+        console.warn('Element not found');
+        return;
+      }
+
+      // Split the text into individual words
+      const text = new SplitText(char, { types: "words", wordClass: "split-word" });
+
+      // Check if SplitText split the words
+      console.log(text.words); // Log words for debugging
+
+      // Animate each word
+      gsap.fromTo(
+        text.words,
+        {
+          color: bg, // Start color
+          opacity: 0, // Ensure opacity starts at 0
+        },
+        {
+          color: fg, // End color
+          opacity: 1, // Fade in the words
+          duration: .1, // Duration of the animation
+          stagger: 0.2, // Stagger the animation between words
+          scrollTrigger: {
+            trigger: char,
+            start: "top 97%",
+            end: "top 60%",
+            scrub: true,
+            markers: true, // Optional: Set to true to view scroll markers for debugging
+            toggleActions: "play play reverse reverse", // Control animation playback actions
+          },
+        }
+      );
+    });
+  }, []);
+  
+
 
   useEffect(() => {
     // Targeting the sub-divs inside the left div
-    const avatar = document.querySelector(".avatar");
+    const avatar = document.querySelector(".dev-shreyash2");
+    const bioImage = document.querySelector(".bio-image");
+
     const details = document.querySelector(".details");
     const bioText = document.querySelector(".bio");
     const techIcons = document.querySelector(".tech-stack");
     const eduData = document.querySelector(".education");
-    const aboutMe = document.querySelector(".about-me");
+    const head = document.querySelector(".heading");
 
     gsap.fromTo(
-      aboutMe,
+      head,
+      { opacity: 0, x: 0 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: avatar,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+
+    // Animate avatar section (fade in from left)
+    gsap.fromTo(
+      avatar,
       { opacity: 0, x: 0 },
       {
         opacity: 1,
@@ -112,21 +252,18 @@ const About = () => {
         },
       }
     );
-
-
-    // Animate avatar section (fade in from left)
     gsap.fromTo(
-      avatar,
-      { opacity: 0, x: -100 },
+     bioImage,
+      { opacity: 0, x: 0 },
       {
         opacity: 1,
         x: 0,
-        duration: 1,
+        duration: .5,
         ease: "power2.out",
         scrollTrigger: {
           trigger: avatar,
           start: "top 97%",
-          end: "top 20%",
+          end: "top 80%",
           scrub: true,
           markers: false,
           toggleActions: "play none none none",
@@ -134,85 +271,85 @@ const About = () => {
       }
     );
 
-    // Animate details section (fade in from left)
-    gsap.fromTo(
-      details,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: details,
-          start: "top 97%",
-          end: "top 20%",
-          scrub: true,
-          markers: false,
-          toggleActions: "play none none none",
-        },
-      }
-    );
+    // // Animate details section (fade in from left)
+    // gsap.fromTo(
+    //   details,
+    //   { opacity: 0, x: -100 },
+    //   {
+    //     opacity: 1,
+    //     x: 0,
+    //     duration: 1,
+    //     ease: "power2.out",
+    //     scrollTrigger: {
+    //       trigger: details,
+    //       start: "top 97%",
+    //       end: "top 20%",
+    //       scrub: true,
+    //       markers: false,
+    //       toggleActions: "play none none none",
+    //     },
+    //   }
+    // );
 
-    // Animate bio text fade-in from left
-    gsap.fromTo(
-      bioText,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: bioText,
-          start: "top 80%",
-          end: "top 20%",
-          scrub: true,
-          markers: false,
-          toggleActions: "play none none none",
-        },
-      }
-    );
+    // // Animate bio text fade-in from left
+    // gsap.fromTo(
+    //   bioText,
+    //   { opacity: 0, x: -100 },
+    //   {
+    //     opacity: 1,
+    //     x: 0,
+    //     duration: 1,
+    //     ease: "power2.out",
+    //     scrollTrigger: {
+    //       trigger: bioText,
+    //       start: "top 80%",
+    //       end: "top 20%",
+    //       scrub: true,
+    //       markers: false,
+    //       toggleActions: "play none none none",
+    //     },
+    //   }
+    // );
 
-    // Animate tech icons fade-in from left
-    gsap.fromTo(
-      techIcons,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: techIcons,
-          start: "top 80%",
-          end: "top 20%",
-          scrub: true,
-          markers: false,
-          toggleActions: "play none none none",
-        },
-      }
-    );
+    // // Animate tech icons fade-in from left
+    // gsap.fromTo(
+    //   techIcons,
+    //   { opacity: 0, x: -100 },
+    //   {
+    //     opacity: 1,
+    //     x: 0,
+    //     duration: 1,
+    //     ease: "power2.out",
+    //     scrollTrigger: {
+    //       trigger: techIcons,
+    //       start: "top 80%",
+    //       end: "top 20%",
+    //       scrub: true,
+    //       markers: false,
+    //       toggleActions: "play none none none",
+    //     },
+    //   }
+    // );
 
-    // Animate education section fade-in from left
-    gsap.fromTo(
-      eduData,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: eduData,
-          start: "top 80%",
-          end: "top 20%",
-          scrub: true,
-          markers: false,
-          toggleActions: "play none none none",
-        },
-      }
-    );
+    // // Animate education section fade-in from left
+    // gsap.fromTo(
+    //   eduData,
+    //   { opacity: 0, x: -100 },
+    //   {
+    //     opacity: 1,
+    //     x: 0,
+    //     duration: 1,
+    //     ease: "power2.out",
+    //     scrollTrigger: {
+    //       trigger: eduData,
+    //       start: "top 80%",
+    //       end: "top 20%",
+    //       scrub: true,
+    //       markers: false,
+    //       toggleActions: "play none none none",
+    //     },
+    //   }
+    // );
   }, []);
 
   return (
@@ -232,11 +369,12 @@ const About = () => {
                   alt="Profile Picture"
                 />
               </div>
-              <div className="text-name ">
+              <div className="text-name  ">
                 <span className="dev-shreyash2">
                   <b>Shreyash Bhosale</b>
                 </span>
                 <br />
+                <div className="reveal-type-small">
                 <div className="profession">
                   <span>Full Stack Developer</span>
                 </div>
@@ -248,13 +386,15 @@ const About = () => {
                     bhosaleshreyash2@gmail.com
                   </a>
                 </div>
+                </div>
+                
               </div>
             </div>
 
             <hr />
             <div className="bio">
-              <h2><b>Bio </b></h2>
-              <p className="bio-text">
+              <h2 className="heading"><b>Bio </b></h2>
+              <p className="bio-text reveal-type-mid">
                 Tech explorer, full-stack web developer, and forever curious.
                 <br />
                 I build sleek UIs with React, power up backends with Node.js,
@@ -266,7 +406,7 @@ const About = () => {
             <hr />
             <div className="achievements">
               <div className="tech-stack">
-                <h2> <b>Technologies I Work With</b></h2>
+                <h2 className="heading"> <b>Technologies I Work With</b></h2>
                 <div className="tech-icons">
                   <SiPython />
                   <SiJavascript />
@@ -290,6 +430,7 @@ const About = () => {
               <br />
               <div className="edu-data" > <p>Mumbai University</p> <p>Aug 2022 – May 2025 </p>
      <p>Bachelor of Science in Computer Science Mumbai, Maharashtra  </p>
+     <br />
       <p>◦ Current SGPI: 8.90+ </p>
       </div>
               {/* <div className="links">
@@ -323,7 +464,7 @@ const About = () => {
         <ZigZagLine />
 
         <div className="right">
-          <h1 className="about-me">About Me</h1>
+          <h1 className="heading">About Me</h1>
           <div
             className="reveal-type"
 

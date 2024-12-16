@@ -22,6 +22,9 @@
       overflow-wrap: break-word;  /* Ensures long words break to fit within the container */
       hyphens: auto;          /* Allows automatic hyphenation where supported */
       line-height: 1.5;       /* Improves readability with balanced spacing */
+      font-family: "Playwrite US Modern Guides", cursive;
+      font-weight: 400;
+      font-style: normal;
   }
 
     img {
@@ -137,7 +140,7 @@
   
 
     p {
-     // font-family: "Playwrite US Modern Guides", cursive;
+      font-family: "Playwrite US Modern Guides", cursive;
       font-weight: 400;
       font-style: normal;
       color: #121212;

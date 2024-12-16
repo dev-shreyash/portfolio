@@ -20,7 +20,7 @@ export default function Projects() {
 
           <div className="project-l">
             {/* FYH Fundraising Platform */}
-            <div className="project-1">
+            <div className="project-item">
               <h3><strong>FYH - Fund Your Homie</strong></h3>
               <p><em>Online fundraising platform with seamless donation integration.</em></p>
               <ul>
@@ -36,7 +36,7 @@ export default function Projects() {
             <hr />
 
             {/* VisualizeX Algorithm Visualizer */}
-            <div className="project-2">
+            <div className="project-item">
               <h3><strong>VisualizeX - Algorithm Visualizer</strong></h3>
               <p><em>Interactive tool to visualize sorting and graph algorithms.</em></p>
               <ul>
@@ -52,7 +52,7 @@ export default function Projects() {
             <hr />
 
             {/* Portfolio Website */}
-            <div className="project-3">
+            <div className="project-item">
               <h3><strong>Portfolio Website</strong></h3>
               <p><em>Interactive portfolio to showcase projects and skills.</em></p>
               <ul>
@@ -74,7 +74,7 @@ export default function Projects() {
           <h1><b>User Experience and Interface Designs</b></h1>
           <div className="project-l2">
             {/* Real Estate Platform */}
-            <div className="project-1">
+            <div className="project-item">
               <h3><strong>Real Estate Platform</strong></h3>
               <p><em>MERN stack application for managing real estate listings.</em></p>
               <ul>
@@ -90,7 +90,7 @@ export default function Projects() {
             <hr />
 
             {/* Brand Landing Page */}
-            <div className="project-2">
+            <div className="project-item">
               <h3><strong>Brand Landing Page</strong></h3>
               <p><em>Modern and responsive landing page for branding.</em></p>
               <ul>
@@ -106,7 +106,7 @@ export default function Projects() {
             <hr />
 
             {/* MovieLand */}
-            <div className="project-3">
+            <div className="project-item">
               <h3><strong>MovieLand</strong></h3>
               <p><em>Web app to search and explore movies using the IMDb API.</em></p>
               <ul>
@@ -122,7 +122,7 @@ export default function Projects() {
             <hr />
 
             {/* CSNotes (Code Snippets Sharing) */}
-            <div className="project-4">
+            <div className="project-item">
               <h3><strong>CSNotes</strong></h3>
               <p><em>Platform to share code snippets using HTML, CSS, and JavaScript.</em></p>
               <ul>

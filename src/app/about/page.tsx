@@ -29,14 +29,14 @@ const About = () => {
   useEffect(() => {
     // Lenis smooth scrolling setup
     const lenis = new Lenis({
-      lerp: 0.1, // Adjust the smoothness of scrolling (lower value for smoother, higher for more inertia)
+      lerp: 0.1, // Adjust the smoothness of scrolling
       smoothWheel: true, // Make wheel scroll smooth
     });
 
     // Smooth scrolling animation loop
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf); // Keep requesting the animation frame
+      requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
 
@@ -47,29 +47,172 @@ const About = () => {
       const bg = char.dataset.bgColor;
       const fg = char.dataset.fgColor;
 
-      // Split the text into individual characters
-      const text = new SplitText(char, { types: "chars" });
+      // Check if the element is found
+      if (!char) {
+        console.warn('Element not found');
+        return;
+      }
 
+      // Split the text into individual words
+      const text = new SplitText(char, { types: "words", wordClass: "split-word" });
+
+      // Check if SplitText split the words
+      console.log(text.words); // Log words for debugging
+
+      // Animate each word
       gsap.fromTo(
-        text.chars,
+        text.words,
         {
           color: bg, // Start color
+          opacity: 0, // Ensure opacity starts at 0
         },
         {
           color: fg, // End color
-          duration: 3,
-          stagger: 0.06,
+          opacity: 1, // Fade in the words
+          duration: .1, // Duration of the animation
+          stagger: 0.8, // Stagger the animation between words
           scrollTrigger: {
             trigger: char,
-            start: "top 65%",
-            end: "top 20%",
+            start: "top 100%",
+            end: "top -50%",
             scrub: true,
-            markers: false, // Optional: Set to true to view scroll markers for debugging
+            markers: true, // Optional: Set to true to view scroll markers for debugging
             toggleActions: "play play reverse reverse", // Control animation playback actions
           },
         }
       );
     });
+  }, []);
+  
+
+  useEffect(() => {
+    // Targeting the sub-divs inside the left div
+    const avatar = document.querySelector(".avatar");
+    const details = document.querySelector(".details");
+    const bioText = document.querySelector(".bio");
+    const techIcons = document.querySelector(".tech-stack");
+    const eduData = document.querySelector(".education");
+    const aboutMe = document.querySelector(".about-me");
+
+    gsap.fromTo(
+      aboutMe,
+      { opacity: 0, x: 0 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: .5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: avatar,
+          start: "top 97%",
+          end: "top 60%",
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+
+    // Animate avatar section (fade in from left)
+    gsap.fromTo(
+      avatar,
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: avatar,
+          start: "top 97%",
+          end: "top 20%",
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate details section (fade in from left)
+    gsap.fromTo(
+      details,
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: details,
+          start: "top 97%",
+          end: "top 20%",
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate bio text fade-in from left
+    gsap.fromTo(
+      bioText,
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: bioText,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate tech icons fade-in from left
+    gsap.fromTo(
+      techIcons,
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: techIcons,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animate education section fade-in from left
+    gsap.fromTo(
+      eduData,
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: eduData,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none none",
+        },
+      }
+    );
   }, []);
 
   return (
@@ -78,7 +221,7 @@ const About = () => {
         <div className="left">
           <div className="avatar">{/* Avatar image */}</div>
           <div
-            className="details reveal-type"
+            className="details "
             data-bg-color="rgba(0, 0, 0, 0.2)"
             data-fg-color="black"
           >
@@ -132,11 +275,6 @@ const About = () => {
                   <SiCss3 />
                   <SiReact />
                   <SiNextdotjs />
-                  
-
-               
-                  
-               
                   <SiNodedotjs />
                   <SiMongodb />
                   <SiMysql />
@@ -185,19 +323,18 @@ const About = () => {
         <ZigZagLine />
 
         <div className="right">
-          <h1>About Me</h1>
+          <h1 className="about-me">About Me</h1>
           <div
-            className="text-block reveal-type"
-            data-bg-color="rgba(0, 0, 0, 0.1)"
-            data-fg-color="black"
+            className="reveal-type"
+
           >
-            <p>
+            <p  className="text-block">
               Hey there! I am Shreyash Bhosale, a passionate tech explorer who
               transformed a lifelong curiosity into a career as a full-stack web
               developer.
             </p>
             <br /> <br />
-            <p>
+            <p  className="text-block">
               Growing up, I was the kid who always wanted to know how gadgets
               worked. I would spend hours tinkering, taking things apart, and
               (sometimes) putting them back together. But it was during college
@@ -205,7 +342,7 @@ const About = () => {
               into a full-blown passion.
             </p>
             <br /> <br />
-            <p>
+            <p  className="text-block">
               The world of web development fascinated me. The idea of crafting
               something from scratch, bringing ideas to life through lines of
               code, felt like magic. I dove headfirst into HTML, CSS,
@@ -213,14 +350,14 @@ const About = () => {
               my creativity and logic.
             </p>
             <br /> <br />
-            <p>
+            <p  className="text-block">
               Whether it is sculpting sleek, responsive UIs or diving deep into
               backend architecture with PostgresSQL/MongoDB, Prisma, and
               Express, I thrive on solving problems and turning concepts into
               reality.
             </p>
             <br /> <br />
-            <p>
+            <p  className="text-block">
               I love adding flair to my projects with animations using{" "}
               <b>GSAP</b> and styling with <b>Tailwind CSS</b>. For me, tech is
               not just a career — it is a playground of endless possibilities. I
@@ -228,14 +365,14 @@ const About = () => {
               that are both functional and delightful.
             </p>
             <br /> <br />
-            <p>
+            <p  className="text-block">
               When I am not coding, you will probably find me exploring design
               tools like <b>Figma</b> or sharpening my creativity with{" "}
               <b>Adobe Photoshop</b> and <b>Illustrator</b>. I believe in the
               power of collaboration, creativity, and continuous learning.
             </p>
             <br /> <br />
-            <p>
+            <p  className="text-block">
               Let us connect, collaborate, and build something awesome together!
             </p>
           </div>

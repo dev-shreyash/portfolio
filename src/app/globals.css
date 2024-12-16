@@ -26,6 +26,23 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+  
+  
+}
+p {
+  word-break: normal;     /* Prevents words from breaking mid-word */
+  overflow-wrap: break-word;  /* Ensures long words break to fit within the container */
+  hyphens: auto;          /* Allows automatic hyphenation where supported */
+  line-height: 1.5;       /* Improves readability with balanced spacing */
+}
+p {
+  display: inline;
+}
+
+.char {
+  display: inline;
+  white-space: normal; /* Allow wrapping */
 }
 
 @layer utilities {
@@ -37,3 +54,4 @@ body {
   color: black;
   background-color: rgb(216, 216, 216);
 }
+

@@ -9,8 +9,20 @@
   font-size: larger;
   margin: auto;
   border-radius: 30px;
-
+  .split-word {
+    display: inline-block;
+    opacity: 0; /* Ensure words start as hidden */
+  }
+  
   .left {
+
+
+    p {
+      word-break: normal;     /* Prevents words from breaking mid-word */
+      overflow-wrap: break-word;  /* Ensures long words break to fit within the container */
+      hyphens: auto;          /* Allows automatic hyphenation where supported */
+      line-height: 1.5;       /* Improves readability with balanced spacing */
+  }
 
     img {
       width: 150px;
@@ -19,8 +31,8 @@
     }
 
     display: flex;
-    //flex-direction: column;
-    // align-items: center;
+    flex-direction: column;
+     align-items: center;
     justify-content: center;
     width: 45%;
 
@@ -39,6 +51,8 @@
       display: flex;
       flex-direction: column;
       gap: 30px;
+      width: 100%;
+      height: 100%;
 
       .main-details {
         .text-name > *:not(:first-child){
@@ -58,8 +72,12 @@
       .achievements{
         .tech-stack{
           .tech-icons{
-            display: flex;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Adjust the width of each column */
+            gap: 20px; /* Space between icons */
+            justify-items: center; /* Center the icons horizontally */
+            align-items: center; /* Center the icons vertically */
+            margin-top: 20px; 
             svg{
               width: 50px;
               height: 50px;
@@ -108,9 +126,18 @@
     gap: 30px;
     border-radius: 20px;
     background-color: #ffffff00;
+    p {
+      word-break: keep-all;       /* Prevents breaking words unless absolutely necessary */
+      white-space: normal;        /* Ensures normal text wrapping */
+      overflow-wrap: break-word;  /* Allows long words to break if needed */
+      line-height: 1.5;           /* Improves readability with consistent line spacing */
+      max-width: 100%;          /* Ensures the paragraph does not overflow its parent */
+      box-sizing: border-box;
+  }
+  
 
     p {
-      font-family: "Playwrite US Modern Guides", cursive;
+     // font-family: "Playwrite US Modern Guides", cursive;
       font-weight: 400;
       font-style: normal;
       color: #121212;

@@ -17,10 +17,9 @@ export default function TransitionLink({
   };
 
   return (
-    <button
-      // className="border-[1px] border-black p-4 rounded-full hover:bg-black hover:text-neutral-100 cursor-pointer"
-      onClick={handleClick}
-    >
+    <button 
+    className="rounded-[65px] px-5 py-2 border-2 border-white text-black font-bold shadow-slate-400 cursor-pointer transition-all duration-300 ease-linear hover:text-black hover:bg-white "     
+     onClick={handleClick}>
       {label}
     </button>
   );

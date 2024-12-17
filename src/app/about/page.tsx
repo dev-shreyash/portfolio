@@ -22,10 +22,15 @@ import {
 } from "react-icons/si";
 import "./about.scss";
 import ZigZagLine from "../../components/smallComponents/zigZag";
+import { usePathname } from 'next/navigation';
+import TransitionLink from "@/components/TransitionLink";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+    const pathname = usePathname();
+    const isAboutPage = pathname.includes('/about');
   useEffect(() => {
     // Lenis smooth scrolling setup
     const lenis = new Lenis({
@@ -34,6 +39,7 @@ const About = () => {
     });
 
     // Smooth scrolling animation loop
+    if(isAboutPage===false){
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -57,9 +63,10 @@ const About = () => {
       const text = new SplitText(char, { types: "words", wordClass: "split-word" });
 
       // Check if SplitText split the words
-      console.log(text.words); // Log words for debugging
+      //console.log(text.words); // Log words for debugging
 
       // Animate each word
+     
       gsap.fromTo(
         text.words,
         {
@@ -76,12 +83,14 @@ const About = () => {
             start: "top 100%",
             end: "top -50%",
             scrub: true,
-            markers: true, // Optional: Set to true to view scroll markers for debugging
+            markers: false, // Optional: Set to true to view scroll markers for debugging
             toggleActions: "play play reverse reverse", // Control animation playback actions
           },
         }
       );
+    
     });
+  }
   }, []);
   
   useEffect(() => {
@@ -134,7 +143,7 @@ const About = () => {
             start: "top 97%",
             end: "top 80%",
             scrub: true,
-            markers: true, // Optional: Set to true to view scroll markers for debugging
+            markers: false, // Optional: Set to true to view scroll markers for debugging
             toggleActions: "play play reverse reverse", // Control animation playback actions
           },
         }
@@ -150,6 +159,7 @@ const About = () => {
     });
 
     // Smooth scrolling animation loop
+    if(isAboutPage===false){
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -192,12 +202,13 @@ const About = () => {
             start: "top 97%",
             end: "top 60%",
             scrub: true,
-            markers: true, // Optional: Set to true to view scroll markers for debugging
+            markers: false, // Optional: Set to true to view scroll markers for debugging
             toggleActions: "play play reverse reverse", // Control animation playback actions
           },
         }
       );
     });
+  }
   }, []);
   
 
@@ -212,6 +223,10 @@ const About = () => {
     const techIcons = document.querySelector(".tech-stack");
     const eduData = document.querySelector(".education");
     const head = document.querySelector(".heading");
+    const headMid = document.querySelector(".heading-mid");
+    const right = document.querySelector(".right");
+
+
 
     gsap.fromTo(
       head,
@@ -222,9 +237,29 @@ const About = () => {
         duration: 1,
         ease: "power2.out",
         scrollTrigger: {
+          trigger: right,
+          start: "top 40%",
+          end: "top 0%",
+          scrub: true,
+          markers: false,
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    
+    gsap.fromTo(
+      headMid,
+      { opacity: 0, x: 0 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
           trigger: avatar,
-          start: "top 80%",
-          end: "top 20%",
+          start: "top 40%",
+          end: "top 0%",
           scrub: true,
           markers: false,
           toggleActions: "play none none none",
@@ -404,8 +439,8 @@ const About = () => {
               </p>
             </div>
             <hr />
-            <div className="achievements">
-              <div className="tech-stack">
+            <div className="heading-mid">
+              <div className="tech-stack ">
                 <h2 className="heading"> <b>Technologies I Work With</b></h2>
                 <div className="tech-icons">
                   <SiPython />
@@ -428,7 +463,7 @@ const About = () => {
             <div className="education">
               <h2> <b>Education</b></h2>
               <br />
-              <div className="edu-data" > <p>Mumbai University</p> <p>Aug 2022 – May 2025 </p>
+              <div className="edu-data reveal-type-mid" > <p>Mumbai University</p> <p>Aug 2022 – May 2025 </p>
      <p>Bachelor of Science in Computer Science Mumbai, Maharashtra  </p>
      <br />
       <p>◦ Current SGPI: 8.90+ </p>
@@ -464,7 +499,7 @@ const About = () => {
         <ZigZagLine />
 
         <div className="right">
-          <h1 className="heading">About Me</h1>
+          <h1 className="heading"> <b>About Me</b></h1>
           <div
             className="reveal-type"
 
@@ -521,6 +556,8 @@ const About = () => {
           {/* Tech Stack Icons */}
         </div>
       </div>
+        {isAboutPage && <TransitionLink href="/" label="Home >" />}
+      
     </main>
   );
 };

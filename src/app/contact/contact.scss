@@ -2,7 +2,11 @@ body {
     //height: 100vh;
     font: 1.1em sans-serif;
   }
-  
+  p,h3{
+    font-family: "Playwrite US Modern Guides", cursive;
+font-weight: 400;
+font-style: normal;
+  }
   .contact-form {
 
     width: 100%;
@@ -12,6 +16,8 @@ body {
     justify-content: center;
     min-height: 100%;
     gap: 60px;
+    height: 100vh;
+   
     
     img{
         height: 600px;
@@ -77,6 +83,9 @@ body {
       h2 {
         font: bolder 3.2em sans-serif;
         margin-top: 0;
+        font-family: "Playwrite US Modern Guides", cursive;
+  font-weight: 400;
+  font-style: normal;
       }
   
       form {

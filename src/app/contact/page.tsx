@@ -8,11 +8,15 @@ export default function Contact() {
   const isContactPage = pathname.includes('/contact');
 
   return (
-    <main className="bg-neutral-100 w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px]">
-    
+    <main
+    className={isContactPage
+      ? "bg-neutral-100 w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] rounded-t-3xl"
+      : "bg-neutral-100 w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] "
+    }
+  >
 
       {/* Connect with Me Section */}
-      <section className="connect-with-me">
+      <section className="connect-with-me mt-5">
         <h3>Connect with Me</h3>
         <p>
           Lets stay connected! Follow me on my social media profiles and feel free to send me a message.
@@ -76,7 +80,9 @@ export default function Contact() {
       </footer>
 
       {/* Conditional Transition Link */}
-      {isContactPage && <TransitionLink href="/" label="Home ->" />}
+      <div className="mb-3">
+      {isContactPage && <TransitionLink href="/" label="Home >" />}
+      </div>
     </main>
   );
 }

@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div>
       {isDesktop ? (
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-black text-white">
           <TsParticles />
           <Navbar />
           <Main />
@@ -26,7 +26,7 @@ export default function Home() {
           <Contact />
         </div>
       ) : (
-        <div className="flex items-center justify-center h-screen p-4 text-center">
+        <div className="flex items-center justify-center h-screen p-4 text-center bg-black text-white">
           <p className="text-xl font-semibold">
             This website is best viewed on a desktop device. Please switch to a larger screen for the full experience.
           </p>

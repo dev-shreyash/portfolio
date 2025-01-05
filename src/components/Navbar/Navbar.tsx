@@ -32,7 +32,7 @@ const Navbar = () => {
     <TransitionLink href="/about" label="About" />
      <TransitionLink href="/career" label="Career" />
      <TransitionLink href="/projects" label="Projects" />      
-     <TransitionLink href="/contact" label="Contact" />
+     <TransitionLink href="mailto:bhosaleshreyash2@gmail.com" target="_blank" label="Contact" />
       </div>
       {/* <div className="right" ref={fadeIn}>
         <img src="/image.svg" alt="" />

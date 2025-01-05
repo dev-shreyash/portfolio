@@ -100,7 +100,7 @@ export default function Projects() {
               </ul>
               <WebsitePreview url="https://nextjs-fund-app.vercel.app" />
               <p>
-                <a href="https://github.com/dev-shreyash/portfolio" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+                <a href="https://github.com/dev-shreyash/nextjs-ai-app" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
               </p>
             </div>
             <hr />
@@ -114,9 +114,9 @@ export default function Projects() {
                 <li>Developed with React, Next.js, and TypeScript.</li>
                 <li>Educational tool for algorithm learning.</li>
               </ul>
-              <WebsitePreview url="https://your-visualizex-link.com" />
+              <WebsitePreview url="https://visualizex.vercel.app" />
               <p>
-                <a href="https://github.com/dev-shreyash/portfolio" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+                <a href="https://github.com/dev-shreyash/visualizex" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
               </p>
             </div>
             <hr />
@@ -186,7 +186,7 @@ export default function Projects() {
               </ul>
               <WebsitePreview url="https://reactapp-e6d31.web.app/" />
               <p>
-                <a href="https://github.com/dev-shreyash/movieland" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+                <a href="https://github.com/dev-shreyash/react-webapp" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
               </p>
             </div>
             <hr />

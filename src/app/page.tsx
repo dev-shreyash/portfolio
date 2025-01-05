@@ -23,7 +23,7 @@ export default function Home() {
           <About />
           <Career />
           <Projects />
-          <Contact />
+          {/* <Contact /> */}
         </div>
       ) : (
         <div className="flex items-center justify-center h-screen p-4 text-center">

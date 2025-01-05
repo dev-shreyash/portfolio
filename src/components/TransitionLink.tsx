@@ -6,9 +6,11 @@ import { animatePageOut } from "@/animations";
 export default function TransitionLink({
   href,
   label,
+  target,
 }: {
   href: string;
   label: string;
+  target?: string;
 }) {
   const router = useRouter();
 

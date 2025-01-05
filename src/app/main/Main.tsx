@@ -16,9 +16,11 @@ const Main = () => {
   const [showPopup, setShowPopup] = useState(false);
    const router = useRouter();
   
-    const handleClickContact = () => {
-      animatePageOut("/contact", router);
-    };
+    // const handleClickContact = () => {
+    //   animatePageOut("/contact", router);
+    // };
+
+
   const handleDownload = () => {
     // Delay the popup display by 2 seconds
     setTimeout(() => {
@@ -145,8 +147,9 @@ const Main = () => {
 
            
           </div>
- 
-          <button className="contact" onClick={handleClickContact} >Contact</button>
+
+          
+          <button className="contact" ><a href="mailto:bhosaleshreyash2@gmail.com" target="_blank">Contact</a></button>
         </div>
         {showPopup && (
               <div className="popup">

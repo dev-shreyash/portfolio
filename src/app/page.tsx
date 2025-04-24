@@ -11,7 +11,9 @@ import { TsParticles } from "@/components/particles";
 
 export default function Home() {
   // Check if the screen width is greater than or equal to 1024px (desktop)
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  // const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const isDesktop = true;
+
 
   return (
     <div>

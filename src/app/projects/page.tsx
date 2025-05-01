@@ -138,7 +138,7 @@ export default function Projects() {
           </div>
         </div>
 
-        <ZigZagLine />
+        {/* <ZigZagLine /> */}
         
         <div className="right">
           <h1><b>User Experience and Interface Designs</b></h1>

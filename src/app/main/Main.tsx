@@ -31,59 +31,70 @@ const Main = () => {
     }, 1000);
   };
   
+ 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  
   useEffect(() => {
     const ourText = new SplitType("span.dev-shreyash", { types: "chars" });
     const chars = ourText.chars;
     gsap.fromTo(
       chars,
-      {
-        y: 100,
-        opacity: 0,
-      },
+      { y: 50, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 5,
-        stagger: 0.03,
-        ease: "elastic(1.2, 0.5)",
+        duration: isMobile ? 1.5 : 5,
+        stagger: isMobile ? 0.01 : 0.03,
+        ease: isMobile ? "power2.out" : "elastic(1.2, 0.5)",
       }
     );
   }, []);
-
+  
   useEffect(() => {
     if (buttonsRef.current) {
       gsap.fromTo(
         buttonsRef.current,
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 5, ease: "power4.out" }
-      );
-    }
-  }, []);
-
-  useEffect(() => {
-    if (iconRef.current) {
-      gsap.fromTo(
-        iconRef.current,
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 5, ease: "power4.out" }
-      );
-    }
-  }, []);
-
-  useEffect(() => {
-    if (aniText.current) {
-      gsap.fromTo(
-        aniText.current,
-        { y: 100, opacity: 0 },
+        { y: 50, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 5,
-          ease: "elastic(1.2, 0.5)",
+          duration: isMobile ? 1.2 : 5,
+          ease: "power3.out",
         }
       );
     }
   }, []);
+  
+  useEffect(() => {
+    if (iconRef.current) {
+      gsap.fromTo(
+        iconRef.current,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: isMobile ? 1.2 : 5,
+          ease: "power3.out",
+        }
+      );
+    }
+  }, []);
+  
+  useEffect(() => {
+    if (aniText.current) {
+      gsap.fromTo(
+        aniText.current,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: isMobile ? 1.5 : 5,
+          ease: isMobile ? "power2.out" : "elastic(1.2, 0.5)",
+        }
+      );
+    }
+  }, []);
+  
 
   return (
     <main className="bg-black-100 text-white w-screen lg:h-screen h-400px mt-32 mb-10 flex flex-col items-center justify-center">

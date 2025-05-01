@@ -1,5 +1,4 @@
-
-"use client"
+"use client";
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
@@ -8,24 +7,14 @@ import {
   MoveDirection,
   OutMode,
 } from "@tsparticles/engine";
-// import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+import { loadSlim } from "@tsparticles/slim";
 
 export const TsParticles = () => {
   const [init, setInit] = useState(false);
 
-  // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
       await loadSlim(engine);
-      //await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
@@ -35,6 +24,8 @@ export const TsParticles = () => {
     console.log(container);
   };
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
   const options: ISourceOptions = useMemo(
     () => ({
       background: {
@@ -42,7 +33,7 @@ export const TsParticles = () => {
           value: "",
         },
       },
-      fpsLimit: 120,
+      fpsLimit: 60, // 60 is enough for mobile
       interactivity: {
         events: {
           onClick: {
@@ -50,17 +41,17 @@ export const TsParticles = () => {
             mode: "push",
           },
           onHover: {
-            enable: true,
+            enable: !isMobile, // disable hover on mobile
             mode: "repulse",
           },
         },
         modes: {
           push: {
-            quantity: 4,
+            quantity: isMobile ? 2 : 4,
           },
           repulse: {
-            distance: 200,
-            duration: 0.4,
+            distance: 100,
+            duration: 0.3,
           },
         },
       },
@@ -70,9 +61,9 @@ export const TsParticles = () => {
         },
         links: {
           color: "#ffffff",
-          distance: 150,
+          distance: 120,
           enable: true,
-          opacity: 0.5,
+          opacity: 0.4,
           width: 1,
         },
         move: {
@@ -82,39 +73,38 @@ export const TsParticles = () => {
             default: OutMode.out,
           },
           random: false,
-          speed: 6,
+          speed: isMobile ? 1.5 : 3, // slower movement on mobile
           straight: false,
         },
         number: {
           density: {
             enable: true,
+            area: 800,
           },
-          value: 80,
+          value: isMobile ? 30 : 60, // fewer particles on mobile
         },
         opacity: {
-          value: 0.5,
+          value: 0.4,
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 1, max: isMobile ? 3 : 5 },
         },
       },
       detectRetina: true,
     }),
-    [],
+    [isMobile]
   );
 
-  if (init) {
-    return (
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />
-    );
-  }
+  if (!init) return null;
 
-  return <></>;
+  return (
+    <Particles
+      id="tsparticles"
+      particlesLoaded={particlesLoaded}
+      options={options}
+    />
+  );
 };

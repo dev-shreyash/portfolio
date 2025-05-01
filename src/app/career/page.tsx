@@ -14,69 +14,73 @@ export default function Career() {
   const isCareerPage = pathname.includes('/career');
  console.log(isCareerPage)
 
-  gsap.registerPlugin(ScrollTrigger);
-  
- 
-  useEffect(() => {
-    // Lenis smooth scrolling setup
-    const lenis = new Lenis({
-      lerp: 0.1, // Adjust the smoothness of scrolling
-      smoothWheel: true, // Make wheel scroll smooth
-    });
+ gsap.registerPlugin(ScrollTrigger);
 
-    // Smooth scrolling animation loop
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+ useEffect(() => {
+  // Lenis smooth scrolling setup
+  const lenis = new Lenis({
+    lerp: 0.1, // Adjust the smoothness of scrolling
+    smoothWheel: true, // Make wheel scroll smooth
+  });
+
+  // Smooth scrolling animation loop
+  function raf(time: number) {
+    lenis.raf(time);
     requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
 
-    // Split and animate text on scroll
-    const splitTypes = document.querySelectorAll(".reveal-type-mid");
+  // Register GSAP ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
 
-    splitTypes.forEach((char: any) => {
-      const bg = char.dataset.bgColor;
-      const fg = char.dataset.fgColor;
+  // Split and animate text on scroll
+  const splitTypes = document.querySelectorAll(".reveal-type-mid");
 
-      // Check if the element is found
-      if (!char) {
-        console.warn('Element not found');
-        return;
-      }
+  splitTypes.forEach((char: any) => {
+    const bg = char.dataset.bgColor;
+    const fg = char.dataset.fgColor;
 
-      // Split the text into individual words
-      const text = new SplitText(char, { types: "words", wordClass: "split-word" });
-
-      // Check if SplitText split the words
-      //console.log(text.words); // Log words for debugging
-
-      // Animate each word
-      if(isCareerPage===false){
-      gsap.fromTo(
-        text.words,
-        {
-          color: bg, // Start color
-          opacity: 0, // Ensure opacity starts at 0
-        },
-        {
-          color: fg, // End color
-          opacity: 1, // Fade in the words
-          duration: .1, // Duration of the animation
-          stagger: 0.2, // Stagger the animation between words
-          scrollTrigger: {
-            trigger: char,
-            start: "top 97%",
-            end: "top 60%",
-            scrub: true,
-            markers: false, // Optional: Set to true to view scroll markers for debugging
-            toggleActions: "play play reverse reverse", // Control animation playback actions
-          },
-        }
-      );
+    // Check if the element is found
+    if (!char) {
+      console.warn('Element not found');
+      return;
     }
-    });
-  }, []);
-  
+
+    // Split the text into individual words
+    const text = new SplitText(char, { types: "words", wordClass: "split-word" });
+
+    // Animate each word
+    gsap.fromTo(
+      text.words,
+      {
+        color: bg, // Start color
+        opacity: 0, // Ensure opacity starts at 0
+      },
+      {
+        color: fg, // End color
+        opacity: 1, // Fade in the words
+        duration: 0.1, // Duration of the animation
+        stagger: 0.2, // Stagger the animation between words
+        scrollTrigger: {
+          trigger: char,
+          start: "top 97%",
+          end: "top 60%",
+          scrub: true, // Smooth scrubbing for the animation
+          markers: false, // Optional: Set to true to view scroll markers for debugging
+          toggleActions: "play play reverse reverse", // Control animation playback actions
+        },
+      }
+    );
+  });
+
+  // Cleanup function to destroy lenis and ScrollTrigger when the component unmounts
+  return () => {
+    lenis.destroy();
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  };
+}, []);
+
+
 
     useEffect(() => {
       // Targeting the sub-divs inside the left div

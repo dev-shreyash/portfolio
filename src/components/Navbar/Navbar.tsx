@@ -25,29 +25,48 @@ const Navbar = () => {
     }
   }, []);
 
-  // Scroll listener for mobile
   useEffect(() => {
     if (window.innerWidth > 768) return;
-
+  
+    let scrollUpCount = 0;
+  
     const handleScroll = () => {
       const currentScroll = window.scrollY;
       const scrollingDown = currentScroll > lastScroll;
-
-      if (navRef.current) {
-        gsap.to(navRef.current, {
-          y: scrollingDown ? 100 : 0,
-          duration: 0.5,
-          ease: "power2.out"
-        });
+  
+      if (scrollingDown) {
+        scrollUpCount = 0; // reset if scrolling down
+        if (navRef.current) {
+          gsap.to(navRef.current, {
+            y: 200,
+            opacity: 0,
+            display: "none",
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        }
+      } else {
+        scrollUpCount++;
+  
+        if (scrollUpCount >= 2 && navRef.current) {
+          gsap.to(navRef.current, {
+            y: 0,
+            opacity: 1,
+            display: "block",
+            duration: 0.5,
+            ease: "power2.out"
+          });
+          scrollUpCount = 0; // reset after showing
+        }
       }
-
+  
       setLastScroll(currentScroll);
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
-
+  
   return (
     <div className='nav' ref={navRef}>
       <div className="left" ref={fadeIn}>

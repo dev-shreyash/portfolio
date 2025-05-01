@@ -1,6 +1,8 @@
 import gsap from "gsap";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
+const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
 export const animatePageIn = () => {
   const transitionElement = document.getElementById("transition-element");
 
@@ -9,18 +11,20 @@ export const animatePageIn = () => {
 
     tl.set(transitionElement, {
       xPercent: 0,
-      zIndex: 999, // Set z-index to 999
+      zIndex: 999,
     })
       .to(transitionElement, {
         xPercent: 100,
-        duration: 0.8,
+        duration: isMobile ? 0.4 : 0.8,
+        ease: isMobile ? "power2.out" : "power4.out",
       })
       .to(
         transitionElement,
         {
-          borderTopLeftRadius: "50vh",
-          borderBottomLeftRadius: "50vh",
-          duration: 0.4,
+          borderTopLeftRadius: isMobile ? "30vh" : "50vh",
+          borderBottomLeftRadius: isMobile ? "30vh" : "50vh",
+          duration: isMobile ? 0.2 : 0.4,
+          ease: "power1.out",
         },
         "<"
       );
@@ -35,15 +39,16 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
 
     tl.set(animationWrapper, {
       xPercent: -100,
-      borderTopRightRadius: "5000vh",
-      borderBottomRightRadius: "50vh",
+      borderTopRightRadius: isMobile ? "30vh" : "50vh",
+      borderBottomRightRadius: isMobile ? "30vh" : "50vh",
       borderTopLeftRadius: "0",
       borderBottomLeftRadius: "0",
-      zIndex: 999, // Set z-index to 999
+      zIndex: 999,
     })
       .to(animationWrapper, {
         xPercent: 0,
-        duration: 0.8,
+        duration: isMobile ? 0.4 : 0.8,
+        ease: isMobile ? "power2.out" : "power4.out",
         onComplete: () => {
           router.push(href);
         },
@@ -53,7 +58,8 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
         {
           borderTopRightRadius: "0",
           borderBottomRightRadius: "0",
-          duration: 0.4,
+          duration: isMobile ? 0.2 : 0.4,
+          ease: "power1.out",
         },
         "<"
       );

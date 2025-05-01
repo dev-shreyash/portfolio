@@ -8,6 +8,7 @@ import { FaGitAlt, FaLinkedin, FaTwitter } from "react-icons/fa";
 import {
   SiFigma,
   SiTailwindcss,
+  SiGit,
   SiReact,
   SiNodedotjs,
   SiHtml5,
@@ -20,17 +21,20 @@ import {
   SiNextdotjs, // Next.js Icon
   SiTypescript,
 } from "react-icons/si";
+import { FaJava,
+  FaAws,
+  FaLinux,
+ } from "react-icons/fa";
 import "./about.scss";
 import ZigZagLine from "../../components/smallComponents/zigZag";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import TransitionLink from "@/components/TransitionLink";
-
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-    const pathname = usePathname();
-    const isAboutPage = pathname.includes('/about');
+  const pathname = usePathname();
+  const isAboutPage = pathname.includes("/about");
   useEffect(() => {
     // Lenis smooth scrolling setup
     const lenis = new Lenis({
@@ -39,60 +43,62 @@ const About = () => {
     });
 
     // Smooth scrolling animation loop
-    if(isAboutPage===false){
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Split and animate text on scroll
-    const splitTypes = document.querySelectorAll(".reveal-type");
-
-    splitTypes.forEach((char: any) => {
-      const bg = char.dataset.bgColor;
-      const fg = char.dataset.fgColor;
-
-      // Check if the element is found
-      if (!char) {
-        console.warn('Element not found');
-        return;
+    if (isAboutPage === false) {
+      function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
       }
+      requestAnimationFrame(raf);
 
-      // Split the text into individual words
-      const text = new SplitText(char, { types: "words", wordClass: "split-word" });
+      // Split and animate text on scroll
+      const splitTypes = document.querySelectorAll(".reveal-type");
 
-      // Check if SplitText split the words
-      //console.log(text.words); // Log words for debugging
+      splitTypes.forEach((char: any) => {
+        const bg = char.dataset.bgColor;
+        const fg = char.dataset.fgColor;
 
-      // Animate each word
-     
-      gsap.fromTo(
-        text.words,
-        {
-          color: bg, // Start color
-          opacity: 0, // Ensure opacity starts at 0
-        },
-        {
-          color: fg, // End color
-          opacity: 1, // Fade in the words
-          duration: .1, // Duration of the animation
-          stagger: 0.8, // Stagger the animation between words
-          scrollTrigger: {
-            trigger: char,
-            start: "top 100%",
-            end: "top -50%",
-            scrub: true,
-            markers: false, // Optional: Set to true to view scroll markers for debugging
-            toggleActions: "play play reverse reverse", // Control animation playback actions
-          },
+        // Check if the element is found
+        if (!char) {
+          console.warn("Element not found");
+          return;
         }
-      );
-    
-    });
-  }
+
+        // Split the text into individual words
+        const text = new SplitText(char, {
+          types: "words",
+          wordClass: "split-word",
+        });
+
+        // Check if SplitText split the words
+        //console.log(text.words); // Log words for debugging
+
+        // Animate each word
+
+        gsap.fromTo(
+          text.words,
+          {
+            color: bg, // Start color
+            opacity: 0, // Ensure opacity starts at 0
+          },
+          {
+            color: fg, // End color
+            opacity: 1, // Fade in the words
+            duration: 0.1, // Duration of the animation
+            stagger: 0.8, // Stagger the animation between words
+            scrollTrigger: {
+              trigger: char,
+              start: "top 100%",
+              end: "top -50%",
+              scrub: true,
+              markers: false, // Optional: Set to true to view scroll markers for debugging
+              toggleActions: "play play reverse reverse", // Control animation playback actions
+            },
+          }
+        );
+      });
+    }
   }, []);
-  
+
   useEffect(() => {
     // Lenis smooth scrolling setup
     const lenis = new Lenis({
@@ -116,12 +122,15 @@ const About = () => {
 
       // Check if the element is found
       if (!char) {
-        console.warn('Element not found');
+        console.warn("Element not found");
         return;
       }
 
       // Split the text into individual words
-      const text = new SplitText(char, { types: "words", wordClass: "split-word" });
+      const text = new SplitText(char, {
+        types: "words",
+        wordClass: "split-word",
+      });
 
       // Check if SplitText split the words
       console.log(text.words); // Log words for debugging
@@ -136,7 +145,7 @@ const About = () => {
         {
           color: fg, // End color
           opacity: 1, // Fade in the words
-          duration: .1, // Duration of the animation
+          duration: 0.1, // Duration of the animation
           stagger: 0.2, // Stagger the animation between words
           scrollTrigger: {
             trigger: char,
@@ -150,7 +159,7 @@ const About = () => {
       );
     });
   }, []);
-  
+
   useEffect(() => {
     // Lenis smooth scrolling setup
     const lenis = new Lenis({
@@ -159,59 +168,60 @@ const About = () => {
     });
 
     // Smooth scrolling animation loop
-    if(isAboutPage===false){
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Split and animate text on scroll
-    const splitTypes = document.querySelectorAll(".reveal-type-mid");
-
-    splitTypes.forEach((char: any) => {
-      const bg = char.dataset.bgColor;
-      const fg = char.dataset.fgColor;
-
-      // Check if the element is found
-      if (!char) {
-        console.warn('Element not found');
-        return;
+    if (isAboutPage === false) {
+      function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
       }
+      requestAnimationFrame(raf);
 
-      // Split the text into individual words
-      const text = new SplitText(char, { types: "words", wordClass: "split-word" });
+      // Split and animate text on scroll
+      const splitTypes = document.querySelectorAll(".reveal-type-mid");
 
-      // Check if SplitText split the words
-      console.log(text.words); // Log words for debugging
+      splitTypes.forEach((char: any) => {
+        const bg = char.dataset.bgColor;
+        const fg = char.dataset.fgColor;
 
-      // Animate each word
-      gsap.fromTo(
-        text.words,
-        {
-          color: bg, // Start color
-          opacity: 0, // Ensure opacity starts at 0
-        },
-        {
-          color: fg, // End color
-          opacity: 1, // Fade in the words
-          duration: .1, // Duration of the animation
-          stagger: 0.2, // Stagger the animation between words
-          scrollTrigger: {
-            trigger: char,
-            start: "top 97%",
-            end: "top 60%",
-            scrub: true,
-            markers: false, // Optional: Set to true to view scroll markers for debugging
-            toggleActions: "play play reverse reverse", // Control animation playback actions
-          },
+        // Check if the element is found
+        if (!char) {
+          console.warn("Element not found");
+          return;
         }
-      );
-    });
-  }
-  }, []);
-  
 
+        // Split the text into individual words
+        const text = new SplitText(char, {
+          types: "words",
+          wordClass: "split-word",
+        });
+
+        // Check if SplitText split the words
+        console.log(text.words); // Log words for debugging
+
+        // Animate each word
+        gsap.fromTo(
+          text.words,
+          {
+            color: bg, // Start color
+            opacity: 0, // Ensure opacity starts at 0
+          },
+          {
+            color: fg, // End color
+            opacity: 1, // Fade in the words
+            duration: 0.1, // Duration of the animation
+            stagger: 0.2, // Stagger the animation between words
+            scrollTrigger: {
+              trigger: char,
+              start: "top 97%",
+              end: "top 60%",
+              scrub: true,
+              markers: false, // Optional: Set to true to view scroll markers for debugging
+              toggleActions: "play play reverse reverse", // Control animation playback actions
+            },
+          }
+        );
+      });
+    }
+  }, []);
 
   useEffect(() => {
     // Targeting the sub-divs inside the left div
@@ -225,8 +235,6 @@ const About = () => {
     const head = document.querySelector(".heading");
     const headMid = document.querySelector(".heading-mid");
     const right = document.querySelector(".right");
-
-
 
     gsap.fromTo(
       head,
@@ -247,7 +255,6 @@ const About = () => {
       }
     );
 
-    
     gsap.fromTo(
       headMid,
       { opacity: 0, x: 0 },
@@ -267,7 +274,6 @@ const About = () => {
       }
     );
 
-
     // Animate avatar section (fade in from left)
     gsap.fromTo(
       avatar,
@@ -275,7 +281,7 @@ const About = () => {
       {
         opacity: 1,
         x: 0,
-        duration: .5,
+        duration: 0.5,
         ease: "power2.out",
         scrollTrigger: {
           trigger: avatar,
@@ -288,12 +294,12 @@ const About = () => {
       }
     );
     gsap.fromTo(
-     bioImage,
+      bioImage,
       { opacity: 0, x: 0 },
       {
         opacity: 1,
         x: 0,
-        duration: .5,
+        duration: 0.5,
         ease: "power2.out",
         scrollTrigger: {
           trigger: avatar,
@@ -388,7 +394,7 @@ const About = () => {
   }, []);
 
   return (
-    <main className="bg-neutral-100 w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] rounded-t-3xl">
+    <main className="bg-neutral-100 w-[100%] md:w-[90%] lg:w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] rounded-t-3xl">
       <div className="about">
         <div className="left">
           <div className="avatar">{/* Avatar image */}</div>
@@ -410,25 +416,28 @@ const About = () => {
                 </span>
                 <br />
                 <div className="reveal-type-small">
-                <div className="profession">
-                  <span>Full Stack Developer</span>
+                  <div className="profession">
+                    <span>Full Stack Developer</span>
+                  </div>
+                  <div className="dob">
+                    <span>
+                      Member of the team Earthlings since June 9, 2003
+                    </span>
+                  </div>
+                  <div className="other">
+                    <a href="mailto:bhosaleshreyash2@gmail.com">
+                      bhosaleshreyash2@gmail.com
+                    </a>
+                  </div>
                 </div>
-                <div className="dob">
-                  <span>Member of the team Earthlings since June 9, 2003</span>
-                </div>
-                <div className="other">
-                  <a href="mailto:bhosaleshreyash2@gmail.com">
-                    bhosaleshreyash2@gmail.com
-                  </a>
-                </div>
-                </div>
-                
               </div>
             </div>
 
             <hr />
             <div className="bio">
-              <h2 className="heading"><b>Bio </b></h2>
+              <h2 className="heading">
+                <b>Bio </b>
+              </h2>
               <p className="bio-text reveal-type-mid">
                 Tech explorer, full-stack web developer, and forever curious.
                 <br />
@@ -441,33 +450,47 @@ const About = () => {
             <hr />
             <div className="heading-mid">
               <div className="tech-stack ">
-                <h2 className="heading"> <b>Technologies I Work With</b></h2>
+                <h2 className="heading">
+                  {" "}
+                  <b>Technologies I Work With</b>
+                </h2>
                 <div className="tech-icons">
-                  <SiPython />
-                  <SiJavascript />
-                  <SiTypescript />
-                  <SiHtml5 />
-                  <SiCss3 />
-                  <SiReact />
-                  <SiNextdotjs />
-                  <SiNodedotjs />
-                  <SiMongodb />
-                  <SiMysql />
-                  <SiPostgresql />
-                  <SiTailwindcss />
-                  <SiFigma />
+                  <SiPython title="Python" />
+                  <FaJava title="Java" />
+                  <SiJavascript title="JavaScript" />
+                  <SiTypescript title="TypeScript" />
+                  <SiGit title="Git" />
+                  <FaAws title="AWS" />
+                  <FaLinux title="Linux" />
+                  <SiHtml5 title="HTML5" />
+                  <SiCss3 title="CSS3" />
+                  <SiReact title="React" />
+                  <SiNextdotjs title="Next.js" />
+                  <SiNodedotjs title="Node.js" />
+                  <SiMongodb title="MongoDB" />
+                  <SiMysql title="MySQL" />
+                  <SiPostgresql title="PostgreSQL" />
+                  <SiTailwindcss title="TailwindCSS" />
+                  <SiFigma title="Figma" />
                 </div>
               </div>
             </div>
             <hr />
             <div className="education">
-              <h2> <b>Education</b></h2>
+              <h2>
+                {" "}
+                <b>Education</b>
+              </h2>
               <br />
-              <div className="edu-data reveal-type-mid" > <p>Mumbai University</p> <p>Aug 2022 – May 2025 </p>
-     <p>Bachelor of Science in Computer Science Mumbai, Maharashtra  </p>
-     <br />
-      <p>◦ Current SGPI: 8.90+ </p>
-      </div>
+              <div className="edu-data reveal-type-mid">
+                {" "}
+                <p>Mumbai University</p> <p>Aug 2022 – May 2025 </p>
+                <p>
+                  Bachelor of Science in Computer Science Mumbai, Maharashtra{" "}
+                </p>
+                <br />
+                <p>◦ Current SGPI: 8.90+ </p>
+              </div>
               {/* <div className="links">
                 <a
                   href="https://github.com/dev-shreyash"
@@ -496,21 +519,21 @@ const About = () => {
           </div>
         </div>
 
-        <ZigZagLine />
+        {/* <ZigZagLine /> */}
 
         <div className="right">
-          <h1 className="heading"> <b>About Me</b></h1>
-          <div
-            className="reveal-type"
-
-          >
-            <p  className="text-block">
+          <h1 className="heading">
+            {" "}
+            <b>About Me</b>
+          </h1>
+          <div className="reveal-type">
+            <p className="text-block">
               Hey there! I am Shreyash Bhosale, a passionate tech explorer who
               transformed a lifelong curiosity into a career as a full-stack web
               developer.
             </p>
             <br /> <br />
-            <p  className="text-block">
+            <p className="text-block">
               Growing up, I was the kid who always wanted to know how gadgets
               worked. I would spend hours tinkering, taking things apart, and
               (sometimes) putting them back together. But it was during college
@@ -518,7 +541,7 @@ const About = () => {
               into a full-blown passion.
             </p>
             <br /> <br />
-            <p  className="text-block">
+            <p className="text-block">
               The world of web development fascinated me. The idea of crafting
               something from scratch, bringing ideas to life through lines of
               code, felt like magic. I dove headfirst into HTML, CSS,
@@ -526,14 +549,14 @@ const About = () => {
               my creativity and logic.
             </p>
             <br /> <br />
-            <p  className="text-block">
+            <p className="text-block">
               Whether it is sculpting sleek, responsive UIs or diving deep into
               backend architecture with PostgresSQL/MongoDB, Prisma, and
               Express, I thrive on solving problems and turning concepts into
               reality.
             </p>
             <br /> <br />
-            <p  className="text-block">
+            <p className="text-block">
               I love adding flair to my projects with animations using{" "}
               <b>GSAP</b> and styling with <b>Tailwind CSS</b>. For me, tech is
               not just a career — it is a playground of endless possibilities. I
@@ -541,14 +564,14 @@ const About = () => {
               that are both functional and delightful.
             </p>
             <br /> <br />
-            <p  className="text-block">
+            <p className="text-block">
               When I am not coding, you will probably find me exploring design
               tools like <b>Figma</b> or sharpening my creativity with{" "}
               <b>Adobe Photoshop</b> and <b>Illustrator</b>. I believe in the
               power of collaboration, creativity, and continuous learning.
             </p>
             <br /> <br />
-            <p  className="text-block">
+            <p className="text-block">
               Let us connect, collaborate, and build something awesome together!
             </p>
           </div>
@@ -556,8 +579,9 @@ const About = () => {
           {/* Tech Stack Icons */}
         </div>
       </div>
-        {isAboutPage && <TransitionLink href="/" label="Home >" />}
-      
+      <div className="home-btn mb-5 ">
+      {isAboutPage && <TransitionLink href="/" label="Home >" />}
+      </div>
     </main>
   );
 };

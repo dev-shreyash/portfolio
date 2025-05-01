@@ -86,7 +86,8 @@ const Main = () => {
   }, []);
 
   return (
-    <main className="bg-black-100 text-white w-screen h-screen flex flex-col items-center justify-center">
+    <main className="bg-black-100 text-white w-screen lg:h-screen h-400px mt-32 mb-10 flex flex-col items-center justify-center">
+      <div className="">
       <div className="name">
         <span className="dev-shreyash">dev-Shreyash</span>
       </div>
@@ -158,6 +159,7 @@ const Main = () => {
             )}
       </div>
       <ScrollButton />
+      </div>
     </main>
   );
 };
@@ -180,7 +182,7 @@ const ScrollButton = () => {
   }, []);
 
   return (
-    <div className="scrollBtn" onClick={handleScroll} ref={fadeIn}>
+    <div className="scrollBtn hidden lg:block" onClick={handleScroll} ref={fadeIn}>
       <img src="/scroll-down-svgrepo-com.svg" alt="Scroll Down" />
     </div>
   );

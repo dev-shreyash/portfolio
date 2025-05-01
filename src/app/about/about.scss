@@ -1,3 +1,5 @@
+@import "../../styles/responsive.scss";
+
 .about {
   display: flex;
   width: 90%;
@@ -9,33 +11,54 @@
   font-size: larger;
   margin: auto;
   border-radius: 30px;
+
   .split-word {
     display: inline-block;
-    opacity: 0; /* Ensure words start as hidden */
+    opacity: 0;
+    /* Ensure words start as hidden */
+
   }
-  
+
+  @include sm {
+    width: 100%;
+    padding: 15px;
+    flex-direction: column;
+  }
+
   .left {
 
+    @include sm {
+      width: 100%;
+    }
 
     p {
-      word-break: normal;     /* Prevents words from breaking mid-word */
-      overflow-wrap: break-word;  /* Ensures long words break to fit within the container */
-      hyphens: auto;          /* Allows automatic hyphenation where supported */
-      line-height: 1.5;       /* Improves readability with balanced spacing */
+      word-break: normal;
+      /* Prevents words from breaking mid-word */
+      overflow-wrap: break-word;
+      /* Ensures long words break to fit within the container */
+      hyphens: auto;
+      /* Allows automatic hyphenation where supported */
+      line-height: 1.5;
+      /* Improves readability with balanced spacing */
       font-family: "Playwrite US Modern Guides", cursive;
       font-weight: 400;
       font-style: normal;
-  }
+    }
 
     img {
       width: 150px;
       height: 150px;
 
+      @include sm {
+        width: 100px;
+        height: 100px;
+      }
+
     }
 
     display: flex;
     flex-direction: column;
-     align-items: center;
+    align-items: center;
     justify-content: center;
     width: 45%;
 
@@ -46,6 +69,8 @@
         width: 150px;
         height: 150px;
         border-radius: 50%;
+
+
       }
 
     }
@@ -58,33 +83,69 @@
       height: 100%;
 
       .main-details {
-        .text-name > *:not(:first-child){
+        .text-name>*:not(:first-child) {
           font-family: "Playwrite US Modern Guides", cursive;
-  font-weight: 400;
-  font-style: normal;
+          font-weight: 400;
+          font-style: normal;
+
+          .dev-shreyash2 {
+            b {
+
+              @include sm {
+                font-size: 20px;
+              }
+            }
+          }
+
+
         }
 
+
       }
-      .bio{
-        .bio-text{
-        font-family: "Playwrite US Modern Guides", cursive;
-  font-weight: 400;
-  font-style: normal;
+
+      .bio {
+
+        .heading{
+          // @include sm {
+          //   font-size: 30px;
+          //   color: #000000;
+          // }
+        }
+        .bio-text {
+          font-family: "Playwrite US Modern Guides", cursive;
+          font-weight: 400;
+          font-style: normal;
         }
       }
-      .heading-mid{
-        .tech-stack{
-          .tech-icons{
+
+      .other{
+        a{
+          text-decoration: none;
+          color: #130fdd;
+          font-family: "Playwrite US Modern Guides", cursive;
+          font-weight: 400;
+          font-style: normal;
+        }
+      }
+
+      .heading-mid {
+        .tech-stack {
+          .tech-icons {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Adjust the width of each column */
-            gap: 20px; /* Space between icons */
-            justify-items: center; /* Center the icons horizontally */
-            align-items: center; /* Center the icons vertically */
-            margin-top: 20px; 
-            svg{
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            /* Adjust the width of each column */
+            gap: 20px;
+            /* Space between icons */
+            justify-items: center;
+            /* Center the icons horizontally */
+            align-items: center;
+            /* Center the icons vertically */
+            margin-top: 20px;
+
+            svg {
               width: 50px;
               height: 50px;
-              margin:10px;
+              margin: 10px;
             }
           }
         }
@@ -99,18 +160,25 @@
         font-size: 50px;
         margin-top: 10px;
         margin-left: -10px;
+
+        @include sm {
+          font-size: 40px;
+          right: -10px;
+          position: relative;
+        }
       }
 
       .education {
         display: flex;
         flex-direction: column;
 
-      
-        .edu-data{
+
+        .edu-data {
           font-family: "Playwrite US Modern Guides", cursive;
-  font-weight: 400;
-  font-style: normal;
+          font-weight: 400;
+          font-style: normal;
         }
+
         .links {
           gap: 10px;
           display: flex;
@@ -121,6 +189,10 @@
   }
 
   .right {
+
+    @include sm {
+      width: 100%;
+    }
     width: 45%;
     //border: 1px solid #fff;
     //padding: 30px;
@@ -129,15 +201,21 @@
     gap: 30px;
     border-radius: 20px;
     background-color: #ffffff00;
+
     p {
-      word-break: keep-all;       /* Prevents breaking words unless absolutely necessary */
-      white-space: normal;        /* Ensures normal text wrapping */
-      overflow-wrap: break-word;  /* Allows long words to break if needed */
-      line-height: 1.5;           /* Improves readability with consistent line spacing */
-      max-width: 100%;          /* Ensures the paragraph does not overflow its parent */
+      word-break: keep-all;
+      /* Prevents breaking words unless absolutely necessary */
+      white-space: normal;
+      /* Ensures normal text wrapping */
+      overflow-wrap: break-word;
+      /* Allows long words to break if needed */
+      line-height: 1.5;
+      /* Improves readability with consistent line spacing */
+      max-width: 100%;
+      /* Ensures the paragraph does not overflow its parent */
       box-sizing: border-box;
-  }
-  
+    }
+
 
     p {
       font-family: "Playwrite US Modern Guides", cursive;

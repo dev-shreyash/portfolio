@@ -195,8 +195,8 @@ export default function Career() {
   return (
     <main
     className={isCareerPage
-      ? "bg-neutral-100 w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] rounded-t-3xl"
-      : "bg-neutral-100 w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] "
+      ? "bg-neutral-100 w-[100%] md:w-[90%] lg:w-[90%]opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] rounded-t-3xl"
+      : "bg-neutral-100 w-[100%] md:w-[90%] lg:w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] "
     }
   >
      <div className="career">
@@ -235,7 +235,7 @@ export default function Career() {
     </div>
    
       </div>
-      <ZigZagLine/>
+      {/* <ZigZagLine/> */}
       
       <div className="right">
         <h1><b>Personal Projects building experience</b></h1>

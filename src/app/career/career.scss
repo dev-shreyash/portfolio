@@ -1,3 +1,5 @@
+@import "../../styles/responsive.scss";
+
 .career{
     padding-top: 50px;
     display: flex;
@@ -10,6 +12,15 @@
     font-size: larger;
    margin: auto;
     border-radius: 30px;
+
+    @include sm {
+        width: 100%;
+       padding: 15px;
+        flex-direction: column;
+        
+    }
+
+    
     .left{
         display: flex;
         flex-direction: column;
@@ -17,6 +28,10 @@
         //justify-content: center;
         width: 45%;
         gap: 30px;
+
+        @include sm {
+            width: 100%;
+        }
 
         .exp-l{
             display: flex;
@@ -47,6 +62,9 @@
         gap: 30px;
         border-radius: 20px;
         //background-color: #ffffff00;
+        @include sm {
+            width: 100%;
+        }
 
         .proj-l{
             display: flex;

@@ -78,10 +78,10 @@ export default function Projects() {
   return (
     <main
     className={isProjectsPage
-      ? "bg-neutral-100 w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] rounded-t-3xl"
-      : "bg-neutral-100 w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] "
+      ? "bg-neutral-100 w-[100%] md:w-[90%] lg:w-[90%]opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] rounded-t-3xl"
+      : "bg-neutral-100 w-[100%] md:w-[90%] lg:w-[90%] opacity-98 text-black mx-auto h-[100%] flex flex-col items-center justify-center gap-[50px] "
     }
-  >      <div className="project">
+  >    <div className="project">
         <div className="left">
           <img src="coding-svgrepo-com.svg" alt="Coding illustration" />
           <h1><b>Projects Showcase</b></h1>
@@ -114,7 +114,7 @@ export default function Projects() {
                 <li>Developed with React, Next.js, and TypeScript.</li>
                 <li>Educational tool for algorithm learning.</li>
               </ul>
-              <WebsitePreview url="https://visualizex.vercel.app" />
+              <WebsitePreview url="https://visualize-x.vercel.app" />
               <p>
                 <a href="https://github.com/dev-shreyash/visualizex" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
               </p>

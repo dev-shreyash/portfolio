@@ -1,39 +1,47 @@
 "use client";
 
-import { useMediaQuery } from "react-responsive";
 import Main from "@/app/main/Main";
 import Navbar from "@/components/Navbar/Navbar";
-import About from "./about/page";
-import Career from "./career/page";
-import Projects from "./projects/page";
-import Contact from "./contact/page";
 import { TsParticles } from "@/components/particles";
 
+// Import from components, NOT from /app routes
+import AboutSection from "@/components/sections/AboutSection";
+ import CareerSection from "@/components/sections/CareerSection";
+import ContactSection from "@/components/sections/ContactSection";
+import ProjectsSection from "@/components/sections/ProjectSection";
+
 export default function Home() {
-  // Check if the screen width is greater than or equal to 1024px (desktop)
-  // const isDesktop = useMediaQuery({ minWidth: 1024 });
-  const isDesktop = true;
-
-
   return (
-    <div>
-      {isDesktop ? (
-        <div className="flex flex-col bg-black text-white">
-          <TsParticles />
-          <Navbar />
+    <div className="relative bg-black text-white">
+      {/* Particles rendered once at the top level. 
+        Using absolute/fixed positioning inside the component to keep it behind content 
+      */}
+      <TsParticles />
+      
+      <Navbar />
+      
+      <main className="relative z-10 flex flex-col">
+        {/* Add IDs to every section for your Navbar to target */}
+        <section id="hero">
           <Main />
-          <About />
-          <Career />
-          <Projects />
-          {/* <Contact /> */}
-        </div>
-      ) : (
-        <div className="flex items-center justify-center h-screen p-4 text-center bg-black text-white">
-          <p className="text-xl font-semibold">
-            This website is best viewed on a desktop device. Please switch to a larger screen for the full experience.
-          </p>
-        </div>
-      )}
+        </section>
+        
+        <section id="about">
+          <AboutSection />
+        </section>
+        
+         <section id="career">
+          <CareerSection />
+        </section>
+       
+        <section id="projects">
+          <ProjectsSection />
+        </section>
+         
+        <section id="contact">
+          <ContactSection />
+        </section>
+      </main>
     </div>
   );
 }

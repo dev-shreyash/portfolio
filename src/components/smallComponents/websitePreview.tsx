@@ -13,6 +13,8 @@ const WebsitePreview: React.FC<WebsitePreviewProps> = ({ url }) => {
         title="Website Preview" 
         className={styles.iframe}
         frameBorder="0"
+        loading="lazy" /* CRITICAL: Stops the page from lagging! */
+        scrolling="no" /* Optional: Hides ugly scrollbars inside the preview */
       />
     </div>
   );

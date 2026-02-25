@@ -159,7 +159,7 @@ export default function ProjectsSection() {
             </div>
             <p className="text-neutral-400 text-xs font-bold uppercase tracking-wider mb-4">Desktop App (DSA)</p>
             <p className="text-neutral-400 text-sm leading-relaxed">
-              Route optimization engine using <span className="text-white">Dijkstra's Algorithm</span> to calculate optimal paths across 50+ stations, modeling complex interchange penalties.
+              Route optimization engine using <span className="text-white">Dijkstra&apos;s Algorithm</span> to calculate optimal paths across 50+ stations, modeling complex interchange penalties.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-neutral-800">

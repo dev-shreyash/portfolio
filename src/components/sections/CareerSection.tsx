@@ -56,7 +56,7 @@ export default function CareerSection() {
           <div>
             <div className="flex justify-between items-start border-b border-neutral-800 pb-4 mb-5">
               <h2 className="text-white text-xl font-bold font-sans">Current Role</h2>
-              <p className="text-neutral-400 font-bold text-xs uppercase tracking-wider">Nov '25 — Present</p>
+              <p className="text-neutral-400 font-bold text-xs uppercase tracking-wider">Nov `25 — Present</p>
             </div>
             <h3 className="text-white text-xl font-bold font-sans">
               Student Software Engineer <span className="text-neutral-500 font-normal">@ Jal Drishti</span>

@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhoneAlt, FaPaperPlane } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhoneAlt, FaPaperPlane, FaCheckCircle } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import TransitionLink from "@/components/TransitionLink";
 
@@ -14,6 +14,9 @@ export default function ContactSection() {
   const container = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isContactPage = pathname.includes("/contact");
+  
+  // States for form submission
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   useGSAP(() => {
     setTimeout(() => ScrollTrigger.refresh(), 100);
@@ -36,12 +39,33 @@ export default function ContactSection() {
     );
   }, { scope: container });
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+ const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const subject = `Portfolio Contact from ${formData.get("name")}`;
-    const body = `${formData.get("message")}%0D%0A%0D%0AReply to: ${formData.get("email")}`;
-    window.location.href = `mailto:bhosaleshreyash2@gmail.com?subject=${subject}&body=${body}`;
+    setStatus("loading");
+    
+    const form = e.currentTarget; // <--- SAVE THE FORM REFERENCE HERE
+    const formData = new FormData(form);
+    
+    formData.append("access_key", "7e6a5894-0aa1-40af-a6d9-3195a6de6a05");
+    formData.append("subject", "New Contact from Portfolio!");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset(); // <--- USE THE SAVED REFERENCE HERE
+        setTimeout(() => setStatus("idle"), 5000); 
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   };
 
   return (
@@ -49,7 +73,7 @@ export default function ContactSection() {
       
       {/* Section Header */}
       <div className="mb-10 text-left contact-card">
-        <h1 className="text-4xl md:text-5xl font-bold text-white font-sans tracking-tight">Let's Connect.</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white font-sans tracking-tight">Let&apos;s Connect.</h1>
         <p className="text-neutral-500 mt-3 text-sm md:text-base max-w-2xl">
           Whether you have a question, an opportunity, or just want to say hi, my inbox is always open.
         </p>
@@ -62,7 +86,7 @@ export default function ContactSection() {
         <div className="contact-card md:col-span-2 md:row-span-2 p-8 border border-neutral-800 rounded-2xl bg-black/40 backdrop-blur-md hover:border-neutral-600 transition-all flex flex-col justify-between">
           <div>
             <h2 className="text-white text-xl font-bold font-sans mb-6">Send a Message</h2>
-            <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
+            <form onSubmit={handleFormSubmit} className="flex flex-col gap-4 relative">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="name" className="text-xs text-neutral-500 uppercase tracking-wider font-bold">Name</label>
@@ -79,9 +103,21 @@ export default function ContactSection() {
                 <textarea required id="message" name="message" rows={6} placeholder="Hello Shreyash, I'd like to talk about..." className="w-full bg-neutral-900/50 border border-neutral-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-white transition-colors resize-none placeholder:text-neutral-700"></textarea>
               </div>
 
-              <button type="submit" className="mt-4 flex items-center justify-center gap-2 w-full md:w-auto md:self-end bg-white text-black px-8 py-3 rounded-lg font-bold font-sans hover:bg-neutral-300 transition-colors">
-                <span>Send Message</span>
-                <FaPaperPlane className="text-sm" />
+              <button 
+                type="submit" 
+                disabled={status === "loading" || status === "success"}
+                className={`mt-4 flex items-center justify-center gap-2 w-full md:w-auto md:self-end px-8 py-3 rounded-lg font-bold font-sans transition-colors ${
+                  status === "success" 
+                    ? "bg-emerald-500 text-black cursor-default"
+                    : status === "error"
+                    ? "bg-red-500 text-white"
+                    : "bg-white text-black hover:bg-neutral-300"
+                }`}
+              >
+                {status === "idle" && <><span className="text-sm">Send Message</span><FaPaperPlane className="text-sm" /></>}
+                {status === "loading" && <span className="text-sm">Sending...</span>}
+                {status === "success" && <><span className="text-sm">Sent Successfully</span><FaCheckCircle className="text-sm" /></>}
+                {status === "error" && <span className="text-sm">Error! Try Again</span>}
               </button>
             </form>
           </div>
@@ -96,7 +132,7 @@ export default function ContactSection() {
                 <FaEnvelope className="text-neutral-500 group-hover:text-black transition-colors" />
               </div>
               <div className="overflow-hidden">
-                <p className="text-xs text-neutral-500 font-bold uppercase tracking-wider mb-1">Email</p>
+                <p className="text-xs text-neutral-500 font-bold uppercase tracking-wider mb-1">Email:</p>
                 <p className="text-sm text-neutral-300 group-hover:text-white transition-colors truncate">bhosaleshreyash2<br/>@gmail.com</p>
               </div>
             </a>
@@ -106,7 +142,7 @@ export default function ContactSection() {
                 <FaPhoneAlt className="text-neutral-500 group-hover:text-black transition-colors" />
               </div>
               <div>
-                <p className="text-xs text-neutral-500 font-bold uppercase tracking-wider mb-1">Phone</p>
+                <p className="text-xs text-neutral-500 font-bold uppercase tracking-wider mb-1">Phone:</p>
                 <p className="text-sm text-neutral-300 group-hover:text-white transition-colors">+91 7039201586</p>
               </div>
             </a>

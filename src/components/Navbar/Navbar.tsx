@@ -9,8 +9,14 @@ const Navbar = () => {
   const mobileNavRef = useRef<HTMLDivElement>(null);
   const [lastScroll, setLastScroll] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  
+  // FIX: This stops Next.js from breaking the desktop view during hydration
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
-  // 1. DESKTOP FADE IN (Using matchMedia so it NEVER breaks on resize)
+  // 1. DESKTOP FADE IN
   useGSAP(() => {
     let mm = gsap.matchMedia();
     mm.add("(min-width: 768px)", () => {
@@ -22,26 +28,27 @@ const Navbar = () => {
     return () => mm.revert();
   }, []);
 
-  // 2. MOBILE SCROLL-TO-HIDE (Only affects the Mobile Header)
+  // 2. SCROLL LOGIC (Applies to BOTH Mobile and Desktop now)
   useEffect(() => {
     if (typeof window === 'undefined') return;
     
     let scrollUpCount = 0;
     const handleScroll = () => {
-      if (window.innerWidth > 768) return; // Strictly ignore Desktop
-      
       const currentScroll = window.scrollY;
       const scrollingDown = currentScroll > lastScroll;
 
       if (scrollingDown) {
         scrollUpCount = 0;
-        if (mobileNavRef.current) {
-          gsap.to(mobileNavRef.current, { y: -100, opacity: 0, duration: 0.5, ease: "power2.out" });
-        }
+        // Scroll down -> Hide BOTH
+        if (desktopNavRef.current) gsap.to(desktopNavRef.current, { y: -100, opacity: 0, duration: 0.5, ease: "power2.out" });
+        if (mobileNavRef.current) gsap.to(mobileNavRef.current, { y: -100, opacity: 0, duration: 0.5, ease: "power2.out" });
+        setIsOpen(false);
       } else {
         scrollUpCount++;
-        if (scrollUpCount >= 2 && mobileNavRef.current) {
-          gsap.to(mobileNavRef.current, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" });
+        if (scrollUpCount >= 2) {
+          // Scroll up -> Show BOTH
+          if (desktopNavRef.current) gsap.to(desktopNavRef.current, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" });
+          if (mobileNavRef.current) gsap.to(mobileNavRef.current, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" });
           scrollUpCount = 0;
         }
       }
@@ -63,15 +70,22 @@ const Navbar = () => {
 
   const navItems = ['about', 'career', 'projects', 'contact'];
 
+  // Ensure nothing renders until the browser is ready (Fixes the blank desktop issue)
+  if (!isMounted) return null;
+
+  const classCondition = window.innerWidth < 768 
+    ? "hidden "
+    : "md:flex fixed top-8 left-0 w-full justify-center z-[100]";
+
   return (
     <>
       {/* =========================================
-          DESKTOP VIEW (Isolated Ref)
+          DESKTOP VIEW
       ============================================= */}
-      <div className="hidden md:flex fixed top-8 left-0 w-full justify-center z-[100]">
-        <div 
+      <div className={classCondition}>
+        <div  
           ref={desktopNavRef} 
-          className="flex items-center justify-around w-[500px] p-4 bg-[#252525] border border-white/90 rounded-[50px] shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+          className="flex items-center justify-around w-[500px] p-4 bg-black/50 backdrop-blur-sm border border-white/90 rounded-[50px] shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
         >
           {navItems.map((item) => (
             <button
@@ -86,11 +100,11 @@ const Navbar = () => {
       </div>
 
       {/* =========================================
-          MOBILE VIEW (Isolated Ref + Hamburger)
+          MOBILE VIEW
       ============================================= */}
       <div 
         ref={mobileNavRef} 
-        className="md:hidden fixed top-0 left-0 w-full z-[100] bg-[#1a1a1a] border-b border-neutral-800 pointer-events-auto"
+        className="md:hidden fixed top-0 left-0 w-full z-[100] bg-black/50 backdrop-blur-sm border-b border-neutral-800 pointer-events-auto"
       >
         <div className="flex items-center justify-between px-6 py-5">
           <span className="font-bold text-white font-sans tracking-tight text-xl">dev-Shreyash</span>
@@ -106,7 +120,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Dropdown */}
-        <div className={`w-full bg-[#1a1a1a] overflow-hidden transition-all duration-300 flex flex-col ${isOpen ? 'max-h-[300px] border-b border-neutral-800' : 'max-h-0'}`}>
+        <div className={`w-full bg-black/50 backdrop-blur-sm overflow-hidden transition-all duration-300 flex flex-col ${isOpen ? 'max-h-[300px] border-b border-neutral-800' : 'max-h-0'}`}>
           {navItems.map((item) => (
             <button
               key={item}

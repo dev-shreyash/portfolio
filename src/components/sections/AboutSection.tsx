@@ -8,8 +8,8 @@ import { FaJava, FaAws, FaLinux } from "react-icons/fa";
 import {
   SiReact, SiNodedotjs, SiMysql, SiPython, SiJavascript,
   SiNextdotjs, SiTailwindcss, SiGit, SiDocker, SiPostgresql, SiMongodb,
-  SiTypescript,
-  SiSpring
+  SiTypescript, SiSpring, SiHtml5, SiCss3, SiVite, SiExpress, SiBun, 
+  SiVisualstudiocode, SiGithub, SiPostman, SiVercel
 } from "react-icons/si";
 import { usePathname } from "next/navigation";
 import TransitionLink from "@/components/TransitionLink";
@@ -47,7 +47,7 @@ export default function AboutSection() {
   }, { scope: container });
 
   return (
-    <main id="about" ref={container} className="w-full max-w-6xl mx-auto px-4 pt-10 pb-0 bg-transparent text-gray-300 font-mono relative z-10">
+    <main id="about" ref={container} className="w-full max-w-7xl mx-auto px-4 pt-10 pb-0 bg-transparent text-gray-300 font-mono text-lg relative z-10">
       
       {/* Responsive Grid: 1 column on Mobile, 3 columns on Desktop */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -57,7 +57,7 @@ export default function AboutSection() {
           <h2 className="text-white font-bold mb-3 font-sans text-xl">About</h2>
           <p className="text-sm leading-relaxed text-neutral-400">
             Tech explorer and full-stack web developer. I specialize in turning complex problems into scalable, user-friendly applications using React, Node.js, Java, and MySQL. Currently building smart solutions and scalable UIs.
-            <span className="inline-block bg-neutral-800 text-white px-2 py-0.5 rounded ml-2 text-xs font-sans mt-2 md:mt-0">MCA '27</span>
+            <span className="inline-block bg-neutral-800 text-white px-2 py-0.5 rounded ml-2 text-xs font-sans mt-2 md:mt-0">MCA `27</span>
           </p>
         </div>
 
@@ -80,24 +80,46 @@ export default function AboutSection() {
         <div className="about-card md:col-span-2 p-6 border border-neutral-800 rounded-2xl bg-black/50 backdrop-blur-sm hover:border-neutral-600 transition-colors flex flex-col justify-center">
           <h2 className="text-white font-bold mb-3 font-sans text-xl">Beyond the Terminal</h2>
           <p className="text-sm leading-relaxed text-neutral-400">
-            I have a strong interest in statistics and data analysis using R. When I'm offline, you can usually find me analyzing discussions on r/Maharashtra, exploring aesthetics in fashion and eyewear, or diving deep into complex sci-fi lore and mind-bending anime power systems. 
+            I have a strong interest in statistics and data analysis using R. When I&apos;m offline, you can usually find me analyzing discussions on r/Maharashtra, exploring aesthetics in fashion and eyewear, or diving deep into complex sci-fi lore and mind-bending anime power systems. 
           </p>
         </div>
-
-        {/* 4. Tech Stack Card (Spans 1 column on Desktop) */}
+{/* 4. Tech Stack Card (Spans 1 column on Desktop) */}
         <div className="about-card md:col-span-1 p-6 border border-neutral-800 rounded-2xl bg-black/50 backdrop-blur-sm hover:border-neutral-600 transition-colors flex flex-col justify-center">
           <h2 className="text-white font-bold mb-5 font-sans text-xl text-center md:text-left">Tech Stack</h2>
-          <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center text-stone-50 [&>svg]:w-6 [&>svg]:h-6 hover:[&>svg]:text-white [&>svg]:transition-colors">
-             <FaJava title="Java" />  <SiJavascript title="JavaScript" /> <SiTypescript title="TypeScript" /><SiReact title="React" /> <SiNodedotjs title="Node.js" />
-             
-            <SiNextdotjs title="Next.js" />
-            <SiSpring title="Spring" />
+          <div className="grid grid-cols-5 md:grid-cols-4 lg:grid-cols-5 gap-4 place-items-center text-stone-50 [&>svg]:w-6 [&>svg]:h-6 hover:[&>svg]:text-white [&>svg]:transition-colors">
             
-             <SiDocker title="Docker" /> 
-            <SiPostgresql title="PostgreSQL" /> <SiMysql title="MySQL" /> <SiMongodb title="MongoDB" />
-            <SiPython title="Python" /> <FaLinux title="Linux" /> <FaAws title="AWS" />
-            <SiTailwindcss title="Tailwind" /> <SiGit title="Git" /> 
-            <span className="font-bold font-sans text-xs border border-neutral-600 rounded-full w-6 h-6 flex items-center justify-center hover:text-white hover:border-white transition-colors cursor-default">R</span>
+            {/* Frontend */}
+            <SiReact title="React" /> 
+            <SiNextdotjs title="Next.js" />
+            <SiHtml5 title="HTML5" />
+            <SiCss3 title="CSS3" />
+            <SiJavascript title="JavaScript" /> 
+            <SiTypescript title="TypeScript" />
+            <SiTailwindcss title="Tailwind CSS" /> 
+            <SiVite title="Vite" />
+
+            {/* Backend & DB */}
+            <SiNodedotjs title="Node.js" />
+            <SiExpress title="Express.js" />
+            <SiBun title="Bun" />
+            <FaJava title="Java" /> 
+            <SiSpring title="Spring Boot" />
+            <SiMongodb title="MongoDB" />
+            <SiMysql title="MySQL" /> 
+            <SiPostgresql title="PostgreSQL" /> 
+            <SiPython title="Python" />
+            
+            {/* Tools & DevOps */}
+            <SiVisualstudiocode title="VS Code" />
+            <SiGit title="Git" /> 
+            <SiGithub title="GitHub" />
+            <SiPostman title="Postman" />
+            <SiVercel title="Vercel" />
+            <SiDocker title="Docker" /> 
+            <FaAws title="AWS" />
+            <FaLinux title="Linux" /> 
+            {/* Miscellaneous */}
+            <span className="font-bold font-sans text-xs border border-neutral-600 rounded-full w-6 h-6 flex items-center justify-center hover:text-white hover:border-white transition-colors cursor-default" title="R Language">R</span>
           </div>
         </div>
 

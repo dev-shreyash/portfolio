@@ -9,7 +9,7 @@ import {
   SiReact, SiNodedotjs, SiMysql, SiPython, SiJavascript,
   SiNextdotjs, SiTailwindcss, SiGit, SiDocker, SiPostgresql, SiMongodb,
   SiTypescript, SiSpring, SiHtml5, SiCss3, SiVite, SiExpress, SiBun, 
-  SiVisualstudiocode, SiGithub, SiPostman, SiVercel
+   SiGithub, SiPostman, SiVercel
 } from "react-icons/si";
 import { usePathname } from "next/navigation";
 import TransitionLink from "@/components/TransitionLink";
@@ -110,7 +110,7 @@ export default function AboutSection() {
             <SiPython title="Python" />
             
             {/* Tools & DevOps */}
-            <SiVisualstudiocode title="VS Code" />
+            {/* <SiVisualstudiocode title="VS Code" /> */}
             <SiGit title="Git" /> 
             <SiGithub title="GitHub" />
             <SiPostman title="Postman" />

@@ -100,7 +100,7 @@ const DesktopHero = ({ handleDownload }: { handleDownload: () => void }) => {
 
         <div className="flex flex-col items-center justify-between gap-[2vw]">
           <div className="text-[3vw] fade-up-element">
-            <span>Full-Stack Developer</span> | <span>Web Designer</span>
+            <span>Full-Stack Developer</span> | <span>Tech Explorer</span>
           </div>
 
           <div className="flex gap-[1vw] fade-up-element">
@@ -148,7 +148,7 @@ const MobileBentoHero = ({ handleDownload }: { handleDownload: () => void }) => 
     <div className="flex flex-col w-full max-w-sm mx-auto p-4 gap-4 mt-24 font-mono text-sm text-gray-300 relative z-10 ">
       <div className="flex items-center gap-4 p-5 border border-neutral-800 rounded-xl bg-black/50 backdrop-blur-sm">
         <div className="w-20 h-20 rounded-full overflow-hidden border border-neutral-700 shrink-0">
-          <img src="/portfolio-my-profile-browser-svgrepo-com.svg" alt="Shreyash" className="w-full h-full object-cover bg-neutral-900" />
+          <img src="/profile-photo.png" alt="Shreyash" className="w-full h-full object-cover bg-neutral-900 backdrop-grayscale" loading="lazy" width={100} height={100}  />
         </div>
         <div className="flex flex-col justify-center">
           <p className="text-xs text-neutral-500 mb-1">Thane, India</p>

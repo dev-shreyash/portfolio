@@ -56,7 +56,7 @@ export default function AboutSection() {
         <div className="about-card md:col-span-2 p-6 border border-neutral-800 rounded-2xl bg-black/50 backdrop-blur-sm hover:border-neutral-600 transition-colors flex flex-col justify-center">
           <h2 className="text-white font-bold mb-3 font-sans text-xl">About</h2>
           <p className="text-sm leading-relaxed text-neutral-400">
-            Tech explorer and full-stack web developer. I specialize in turning complex problems into scalable, user-friendly applications using React, Node.js, Java, and MySQL. Currently building smart solutions and scalable UIs.
+            Tech explorer and full-stack developer. I specialize in turning complex problems into scalable, user-friendly applications using React, Node.js, Java, and MySQL. Currently building smart solutions and scalable UIs.
             <span className="inline-block bg-neutral-800 text-white px-2 py-0.5 rounded ml-2 text-xs font-sans mt-2 md:mt-0">MCA `27</span>
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function AboutSection() {
         <div className="about-card md:col-span-2 p-6 border border-neutral-800 rounded-2xl bg-black/50 backdrop-blur-sm hover:border-neutral-600 transition-colors flex flex-col justify-center">
           <h2 className="text-white font-bold mb-3 font-sans text-xl">Beyond the Terminal</h2>
           <p className="text-sm leading-relaxed text-neutral-400">
-            I have a strong interest in statistics and data analysis using R. When I&apos;m offline, you can usually find me analyzing discussions on r/Maharashtra, exploring aesthetics in fashion and eyewear, or diving deep into complex sci-fi lore and mind-bending anime power systems. 
+            I have a strong interest in the intersection of technology and art. When I&apos;m offline, you can usually find me analyzing discussions on reddit, exploring aesthetics in fashion and eyewear, or diving deep into complex sci-fi lore and mind-bending anime power systems. 
           </p>
         </div>
 {/* 4. Tech Stack Card (Spans 1 column on Desktop) */}

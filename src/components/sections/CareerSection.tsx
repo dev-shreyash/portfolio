@@ -36,7 +36,7 @@ export default function CareerSection() {
   }, { scope: container });
 
   return (
-    <main id="career" ref={container} className="w-full max-w-6xl mx-auto px-4 pt-16 pb-20 bg-transparent text-gray-300 font-mono relative z-10">
+    <main id="career" ref={container} className="w-full max-w-7xl mx-auto px-4 pt-16 pb-20 bg-transparent text-gray-300 font-mono relative z-10">
       
       {/* Responsive Grid - Perfect 3-column layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -55,11 +55,11 @@ export default function CareerSection() {
         <div className="career-card md:col-span-2 p-8 border border-neutral-800 rounded-2xl bg-black/40 backdrop-blur-md hover:border-neutral-600 transition-all flex flex-col justify-between">
           <div>
             <div className="flex justify-between items-start border-b border-neutral-800 pb-4 mb-5">
-              <h2 className="text-white text-xl font-bold font-sans">Current Role</h2>
+              <h2 className="text-white text-xl font-bold font-sans">Current Focus</h2>
               <p className="text-neutral-400 font-bold text-xs uppercase tracking-wider">Nov `25 — Present</p>
             </div>
             <h3 className="text-white text-xl font-bold font-sans">
-              Student Software Engineer <span className="text-neutral-500 font-normal">@ Jal Drishti</span>
+              Lead Developer <span className="text-neutral-500 font-normal">@ Jal Drishti(Project)</span>
             </h3>
             <p className="text-neutral-400 text-sm mt-3 leading-relaxed">
               Leading the full-stack architecture for a digital water management system designed for Gram Panchayats. Focused on clean database schemas, secure RBAC, and simulating AI/ML demand predictions.

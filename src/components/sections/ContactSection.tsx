@@ -69,7 +69,7 @@ export default function ContactSection() {
   };
 
   return (
-    <main id="contact" ref={container} className="w-full max-w-6xl mx-auto px-4 pt-16 pb-20 bg-transparent text-gray-300 font-mono relative z-10">
+    <main id="contact" ref={container} className="w-full max-w-7xl mx-auto px-4 pt-16 pb-20 bg-transparent text-gray-300 font-mono relative z-10">
       
       {/* Section Header */}
       <div className="mb-10 text-left contact-card">

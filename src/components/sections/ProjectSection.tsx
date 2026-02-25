@@ -41,7 +41,7 @@ export default function ProjectsSection() {
   }, { scope: container });
 
   return (
-    <main id="projects" ref={container} className="w-full max-w-6xl mx-auto px-4 pt-16 pb-20 bg-transparent text-gray-300 font-mono relative z-10">
+    <main id="projects" ref={container} className="w-full max-w-7xl mx-auto px-4 pt-16 pb-20 bg-transparent text-gray-300 font-mono relative z-10">
       
       {/* Responsive Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">

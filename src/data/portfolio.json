@@ -1,0 +1,207 @@
+{
+  "hero": {
+    "desktopTitle": "dev-Shreyash",
+    "firstName": "Shreyash",
+    "lastName": "Bhosale",
+    "roles": ["Full-Stack Developer", "Tech Explorer"],
+    "location": "Thane, India",
+    "email": "bhosaleshreyash2@gmail.com",
+    "phone": "+91 7039201586",
+    "profilePhoto": "/profile-photo.png",
+    "resumeLink": "https://drive.google.com/uc?export=download&id=18uzEa7MtKk5KzB_F8_TB_pgMsl9AX7zQ"
+  },
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/dev-shreyash",
+      "icon": "/icons8-github.svg",
+      "mobileLabel": "github.com/dev-shreyash",
+      "showOnMobile": true
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/bhosaleshreyash2/",
+      "icon": "/icons8-linkedin.svg",
+      "mobileLabel": "in/bhosaleshreyash2",
+      "showOnMobile": true
+    },
+    {
+      "name": "Stack Overflow",
+      "url": "#",
+      "icon": "/icons8-stack-overflow.svg",
+      "showOnMobile": false
+    },
+    {
+      "name": "Twitter",
+      "url": "#",
+      "icon": "/icons8-twitterx.svg",
+      "showOnMobile": false
+    }
+  ],
+  "about": {
+    "title": "About",
+    "description": "Tech explorer and full-stack developer. I specialize in turning complex problems into scalable, user-friendly applications using React, Node.js, Java, and MySQL. Currently building smart solutions and scalable UIs.",
+    "badge": "MCA `27",
+    "educationTitle": "Education",
+    "education": [
+      {
+        "degree": "MCA (Master of Computer Applications)",
+        "details": "NMITD | 2025 - 2027"
+      },
+      {
+        "degree": "B.Sc. in Computer Science",
+        "details": "Mumbai University | 2022 - 2025"
+      }
+    ],
+    "beyondTitle": "Beyond the Terminal",
+    "beyondDescription": "I have a strong interest in the intersection of technology and art. When I'm offline, you can usually find me analyzing discussions on reddit, exploring aesthetics in fashion and eyewear, or diving deep into complex sci-fi lore and mind-bending anime power systems.",
+    "techStackTitle": "Tech Stack"
+  },
+  "career": {
+    "status": {
+      "line1": "Actively",
+      "line2": "Interviewing",
+      "subtitle": "Software Engineering"
+    },
+    "experience": [
+      {
+        "badge": "Current Focus",
+        "dateRange": "Nov `25 — Present",
+        "role": "Lead Developer",
+        "company": "@ Jal Drishti(Project)",
+        "description": "Leading the full-stack architecture for a digital water management system designed for Gram Panchayats. Focused on clean database schemas, secure RBAC, and simulating AI/ML demand predictions.",
+        "tags": ["Node.js", "MySQL", "AI/ML Integration"]
+      }
+    ],
+    "certificationsTitle": "Licenses & Certifications",
+    "certifications": [
+        
+      {
+        "title": "Data Structure & Algorithms (Java)",
+        "subtitle": "NPTEL (Swayam) • Expected Nov 2026"
+      },
+      {
+        "title": "Object Oriented System Dev",
+        "subtitle": "NPTEL (Swayam) • Expected May 2026"
+      },
+      {
+        "title": "Java, Advanced JS & Node.js",
+        "subtitle": "Scaler Academy"
+      }
+    ],
+    "timeline": [
+      {
+        "title": "MCA Journey & Internships",
+        "subtitle": "Present – 2027"
+      },
+      {
+        "title": "First Degree",
+        "subtitle": "Graduated • May 2025"
+      },
+      {
+        "title": "Started Coding",
+        "subtitle": "B.Sc. CS • 2022"
+      }
+    ]
+  },
+  "projects": {
+    "intro": {
+      "titleLine1": "Featured",
+      "titleLine2": "Work.",
+      "description": "A collection of scalable web applications, algorithms, and full-stack solutions.",
+      "githubText": "View all on GitHub",
+      "githubLink": "https://github.com/dev-shreyash"
+    },
+    "items": [
+      {
+        "id": "visualizex",
+        "title": "VisualizeX",
+        "github": "https://github.com/dev-shreyash/visualizex",
+        "live": "https://visualize-x.vercel.app",
+        "subtitle": "Algorithm Visualizer & IDE",
+        "description": "Real-time interactive tool to visualize sorting and graph algorithms with a custom code execution sandbox. Engineered a high-performance backend using <span class=\"text-white\">Elysia.js (Bun)</span>.",
+        "hasPreview": true,
+        "previewStyle": "mb-6",
+        "colSpan": 2,
+        "tech": {
+          "icons": ["React", "Next.js", "TypeScript"],
+          "badges": ["Bun"],
+          "hasDivider": true
+        }
+      },
+      {
+        "id": "fyh",
+        "title": "FYH - Fund Your Homie",
+        "github": "https://github.com/dev-shreyash/nextjs-ai-app",
+        "live": "https://nextjs-fund-app.vercel.app",
+        "subtitle": "Donation Platform",
+        "description": "Online fundraising platform with seamless donation integration. Integrated <span class=\"text-white\">Razorpay</span> for secure, real-time donations and automated receipt generation using Next.js SSR.",
+        "hasPreview": true,
+        "previewStyle": "mb-6",
+        "colSpan": 2,
+        "tech": {
+          "icons": ["Next.js", "Tailwind CSS", "MongoDB"],
+          "badges": ["Razorpay API"],
+          "hasDivider": true
+        }
+      },
+      {
+        "id": "realestate",
+        "title": "Real Estate App",
+        "github": "https://github.com/dev-shreyash/real-estate-react-app",
+        "live": "https://real-estate-react-app-shreyash.netlify.app/",
+        "description": "MERN stack application for managing real estate listings with real-time chat, profile management, and advanced search filters.",
+        "hasPreview": true,
+        "previewStyle": "h-32 mb-4",
+        "colSpan": 1,
+        "tech": {
+          "icons": ["React", "Node.js", "MongoDB"],
+          "badges": [],
+          "hasDivider": false
+        }
+      },
+      {
+        "id": "metro",
+        "title": "Metro Navigator",
+        "github": "#",
+        "subtitle": "Desktop App (DSA)",
+        "description": "Route optimization engine using <span class=\"text-white\">Dijkstra's Algorithm</span> to calculate optimal paths across 50+ stations, modeling complex interchange penalties.",
+        "hasPreview": false,
+        "colSpan": 1,
+        "tech": {
+          "icons": ["Java"],
+          "badges": ["Swing", "Graphs"],
+          "hasDivider": false
+        }
+      },
+      {
+        "id": "movieland",
+        "title": "MovieLand",
+        "github": "https://github.com/dev-shreyash/react-webapp",
+        "live": "https://reactapp-e6d31.web.app/",
+        "description": "Web app to search and explore movies using the <span class=\"text-white\">IMDb API</span>. Built dynamically to fetch and display movie details with a clean UI.",
+        "hasPreview": false,
+        "colSpan": 1,
+        "tech": {
+          "icons": ["React"],
+          "badges": ["IMDb API"],
+          "hasDivider": false
+        }
+      },
+      {
+        "id": "csnotes",
+        "title": "CSNotes",
+        "github": "https://github.com/dev-shreyash/csnotes",
+        "live": "https://codenetz.web.app/csnotes",
+        "description": "Platform to easily share and categorize code snippets. Built with a focus on fast loading times and a simple interface.",
+        "hasPreview": false,
+        "colSpan": 1,
+        "tech": {
+          "icons": ["HTML5", "CSS3", "JavaScript"],
+          "badges": [],
+          "hasDivider": false
+        }
+      }
+    ]
+  }
+}

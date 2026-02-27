@@ -163,14 +163,16 @@
       {
         "id": "metro",
         "title": "Metro Navigator",
-        "github": "#",
-        "subtitle": "Desktop App (DSA)",
+        "github": "https://github.com/dev-shreyash/Metro_Navigator",
+        "subtitle": "Metro App with Dijkstra's Algorithm",
         "description": "Route optimization engine using <span class=\"text-white\">Dijkstra's Algorithm</span> to calculate optimal paths across 50+ stations, modeling complex interchange penalties.",
         "hasPreview": false,
         "colSpan": 1,
         "tech": {
-          "icons": ["Java"],
-          "badges": ["Swing", "Graphs"],
+          "icons": ["Java" ],
+
+
+          "badges": ["Spring Boot","React.js", "MySQL", "Graphs"],
           "hasDivider": false
         }
       },

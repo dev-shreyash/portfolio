@@ -220,7 +220,7 @@ export default function ContactSection() {
               </div>
             </a>
 
-            <a
+            {/* <a
               href={`tel:${portfolioData.hero.phone.replace(/\s+/g, '')}`}
               className="flex items-center gap-4 group"
             >
@@ -235,7 +235,7 @@ export default function ContactSection() {
                   {portfolioData.hero.phone}
                 </p>
               </div>
-            </a>
+            </a> */}
           </div>
         </div>
 

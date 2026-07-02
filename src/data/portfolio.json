@@ -63,15 +63,14 @@
       "line2": "Interviewing",
       "subtitle": "Software Engineering"
     },
-    "experience": [
-      {
-        "badge": "Current Focus",
-        "dateRange": "Nov `25 — Present",
-        "role": "Lead Developer",
-        "company": "@ Jal Drishti(Project)",
-        "description": "Leading the full-stack architecture for a digital water management system designed for Gram Panchayats. Focused on clean database schemas, secure RBAC, and simulating AI/ML demand predictions.",
-        "tags": ["Node.js", "MySQL", "AI/ML Integration"]
-      }
+  {
+  "badge": "Current Focus",
+  "dateRange": "Mar `26 — Present",
+  "role": "Lead Architect & AI Developer",
+  "company": "@ Evalur (Project)",
+  "description": "Architecting a distributed full-stack B2B ecosystem to automate technical onboarding. Built an AI-driven RAG pipeline using LangChain4j for company-specific challenge generation and engineered a secure multi-layered assessment sandbox.",
+  "tags": ["Java Spring Boot", "React 19", "LangChain4j", "PostgreSQL", "TypeScript"]
+}
     ],
     "certificationsTitle": "Licenses & Certifications",
     "certifications": [

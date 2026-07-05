@@ -8,7 +8,7 @@
     "email": "bhosaleshreyash2@gmail.com",
     "phone": "",
     "profilePhoto": "/profile-photo.png",
-    "resumeLink": "https://drive.google.com/uc?export=download&id=18uzEa7MtKk5KzB_F8_TB_pgMsl9AX7zQ"
+    "resumeLink": "https://drive.google.com/uc?export=download&id=1gWVPoHybzUulf5HouZ9KJAVwzIdiqAq2"
   },
   "socials": [
     {
@@ -58,51 +58,57 @@
     "techStackTitle": "Tech Stack"
   },
   "career": {
-    "status": {
-      "line1": "Actively",
-      "line2": "Interviewing",
-      "subtitle": "Software Engineering"
-    },
-  {
-  "badge": "Current Focus",
-  "dateRange": "Mar `26 — Present",
-  "role": "Lead Architect & AI Developer",
-  "company": "@ Evalur (Project)",
-  "description": "Architecting a distributed full-stack B2B ecosystem to automate technical onboarding. Built an AI-driven RAG pipeline using LangChain4j for company-specific challenge generation and engineered a secure multi-layered assessment sandbox.",
-  "tags": ["Java Spring Boot", "React 19", "LangChain4j", "PostgreSQL", "TypeScript"]
-}
-    ],
-    "certificationsTitle": "Licenses & Certifications",
-    "certifications": [
-        
-      {
-        "title": "Data Structure & Algorithms (Java)",
-        "subtitle": "NPTEL (Swayam) • Expected Nov 2026"
-      },
-      {
-        "title": "Object Oriented System Dev",
-        "subtitle": "NPTEL (Swayam) • Expected May 2026"
-      },
-      {
-        "title": "Java, Advanced JS & Node.js",
-        "subtitle": "Scaler Academy"
-      }
-    ],
-    "timeline": [
-      {
-        "title": "MCA Journey & Internships",
-        "subtitle": "Present – 2027"
-      },
-      {
-        "title": "First Degree",
-        "subtitle": "Graduated • May 2025"
-      },
-      {
-        "title": "Started Coding",
-        "subtitle": "B.Sc. CS • 2022"
-      }
-    ]
+  "status": {
+    "line1": "Actively",
+    "line2": "Interviewing",
+    "subtitle": "Software Engineering"
   },
+  "experience": [
+    {
+      "badge": "Current Focus",
+      "dateRange": "Mar `26 — Present",
+      "role": "Lead Architect & AI Developer",
+      "company": "@ Evalur (Project)",
+      "description": "Architecting a distributed full-stack B2B ecosystem to automate technical onboarding. Built an AI-driven RAG pipeline using LangChain4j for company-specific challenge generation and engineered a secure multi-layered assessment sandbox.",
+      "tags": [
+        "Java Spring Boot",
+        "React 19",
+        "LangChain4j",
+        "PostgreSQL",
+        "TypeScript"
+      ]
+    }
+  ],
+  "certificationsTitle": "Licenses & Certifications",
+  "certifications": [
+    {
+      "title": "Data Structure & Algorithms (Java)",
+      "subtitle": "NPTEL (Swayam) • Expected Nov 2026"
+    },
+    {
+      "title": "Object Oriented System Dev",
+      "subtitle": "NPTEL (Swayam) • Expected May 2026"
+    },
+    {
+      "title": "Java, Advanced JS & Node.js",
+      "subtitle": "Scaler Academy"
+    }
+  ],
+  "timeline": [
+    {
+      "title": "MCA Journey & Internships",
+      "subtitle": "Present – 2027"
+    },
+    {
+      "title": "First Degree",
+      "subtitle": "Graduated • May 2025"
+    },
+    {
+      "title": "Started Coding",
+      "subtitle": "B.Sc. CS • 2022"
+    }
+  ]
+},
   "projects": {
     "intro": {
       "titleLine1": "Featured",

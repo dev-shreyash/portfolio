@@ -3,12 +3,12 @@
     "desktopTitle": "dev-Shreyash",
     "firstName": "Shreyash",
     "lastName": "Bhosale",
-    "roles": ["Full-Stack Developer", "Tech Explorer"],
+    "roles": ["Full-Stack Developer", "AI & Backend Developer"],
     "location": "Thane, India",
     "email": "bhosaleshreyash2@gmail.com",
     "phone": "",
     "profilePhoto": "/profile-photo.png",
-    "resumeLink": "https://drive.google.com/uc?export=download&id=1gWVPoHybzUulf5HouZ9KJAVwzIdiqAq2"
+    "resumeLink": "https://drive.google.com/uc?export=download&id=1sLxes7FDRG-LWy-pwtPeoUO5RGj7VBjA"
   },
   "socials": [
     {
@@ -26,9 +26,9 @@
       "showOnMobile": true
     },
     {
-      "name": "Stack Overflow",
-      "url": "#",
-      "icon": "/icons8-stack-overflow.svg",
+      "name": "Leetcode",
+      "url": "https://leetcode.com/u/shreyash_bhosale/",
+      "icon": "/icons8-leetcode.svg",
       "showOnMobile": false
     },
     {
@@ -38,51 +38,64 @@
       "showOnMobile": false
     }
   ],
+ 
   "about": {
     "title": "About",
-    "description": "Tech explorer and full-stack developer. I specialize in turning complex problems into scalable, user-friendly applications using React, Node.js, Java, and MySQL. Currently building smart solutions and scalable UIs.",
-    "badge": "MCA `27",
+    "description": "Full-Stack & AI Engineer passionate about building intelligent, scalable software. I specialize in Java, Spring Boot, React, Next.js, and AI-powered backend systems using Retrieval-Augmented Generation (RAG) and LangChain4j. I enjoy transforming complex engineering problems into high-performance, production-ready applications.",
+    "badge": "MCA '27",
+
     "educationTitle": "Education",
     "education": [
       {
-        "degree": "MCA (Master of Computer Applications)",
-        "details": "NMITD | 2025 - 2027"
+        "degree": "Master of Computer Applications (MCA)",
+        "details": "Deccan Education Society's NMITD | 2025 - 2027 | Current CGPI: 8.28"
       },
       {
         "degree": "B.Sc. in Computer Science",
-        "details": "Mumbai University | 2022 - 2025"
+        "details": "University of Mumbai | 2022 - 2025 | CGPI: 8.57"
       }
     ],
+
     "beyondTitle": "Beyond the Terminal",
-    "beyondDescription": "I have a strong interest in the intersection of technology and art. When I'm offline, you can usually find me analyzing discussions on reddit, exploring aesthetics in fashion and eyewear, or diving deep into complex sci-fi lore and mind-bending anime power systems.",
+    "beyondDescription": "Outside of software development, I enjoy exploring emerging AI technologies, reading engineering discussions on Reddit, experimenting with UI/UX design, and diving into science fiction, anime, and modern tech culture.",
+
     "techStackTitle": "Tech Stack"
   },
+
   "career": {
-  "status": {
-    "line1": "Actively",
-    "line2": "Interviewing",
-    "subtitle": "Software Engineering"
-  },
-  "experience": [
-    {
-      "badge": "Current Focus",
-      "dateRange": "Mar `26 — Present",
-      "role": "Lead Architect & AI Developer",
-      "company": "@ Evalur (Project)",
-      "description": "Architecting a distributed full-stack B2B ecosystem to automate technical onboarding. Built an AI-driven RAG pipeline using LangChain4j for company-specific challenge generation and engineered a secure multi-layered assessment sandbox.",
-      "tags": [
-        "Java Spring Boot",
-        "React 19",
-        "LangChain4j",
-        "PostgreSQL",
-        "TypeScript"
-      ]
-    }
-  ],
+    "status": {
+   "line1": "Building",
+"line2": "AI Products",
+"subtitle": "Open to Software Engineering Internships"
+    },
+
+    "experience": [
+      {
+        "badge": "Current Project",
+        "dateRange": "Mar '26 — Present",
+
+        "role": "Full-Stack & AI Engineer",
+
+        "company": "@ Evalur",
+
+        "description": "Building Evalur, an AI-powered enterprise technical assessment platform that automates engineering readiness using Spring Boot, LangChain4j, Retrieval-Augmented Generation (RAG), secure code execution, and enterprise knowledge retrieval. Developing scalable backend services, JWT-based RBAC, PostgreSQL persistence, and a React 19 interface for AI-assisted assessments.",
+
+        "tags": [
+          "Spring Boot",
+          "React 19",
+          "LangChain4j",
+          "RAG",
+          "LlamaParse",
+          "PostgreSQL",
+          "JWT",
+          "TypeScript"
+        ]
+      }
+    ]
   "certificationsTitle": "Licenses & Certifications",
   "certifications": [
     {
-      "title": "Data Structure & Algorithms (Java)",
+      "title": "Software Engineering",
       "subtitle": "NPTEL (Swayam) • Expected Nov 2026"
     },
     {
